@@ -4,86 +4,180 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="ClaytonStrategy helps founders and companies unlock clarity and direction in AI, GTM, and product strategy." />
-  <title>ClaytonStrategy | AI & GTM Advisory</title>
+  <title>ClaytonStrategy | Advisory for Founders at the Frontier</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --brand-color: #000000;
+      --accent-color: #f0f0f0;
+      --text-color: #1a1a1a;
+      --muted-color: #666666;
+      --radius: 10px;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
       background: #ffffff;
-      color: #1a1a1a;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
-    }
-    header {
-      padding: 1rem 0;
-    }
-    header img {
-      max-width: 160px;
-      height: auto;
-    }
-    h1 {
-      font-size: 2rem;
-      margin-top: 1rem;
-      color: #1a1a1a;
-    }
-    p {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 1rem auto;
+      color: var(--text-color);
       line-height: 1.6;
     }
+
+    header, main, footer {
+      padding: 2rem;
+      max-width: 960px;
+      margin: auto;
+    }
+
+    header {
+      text-align: center;
+      padding-top: 3rem;
+    }
+
+    header img {
+      max-width: 160px;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-color);
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      margin-top: 3rem;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .services {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .service-block {
+      background: var(--accent-color);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
     .cta {
       margin-top: 2rem;
+      text-align: center;
     }
+
     .cta a {
-      background: #000;
-      color: #fff;
+      background: var(--brand-color);
+      color: #ffffff;
       padding: 0.75rem 1.5rem;
       text-decoration: none;
       font-weight: 600;
       border-radius: 6px;
-      transition: background 0.3s;
+      transition: background 0.3s ease;
+      display: inline-block;
     }
+
     .cta a:hover {
       background: #333;
     }
+
     footer {
+      text-align: center;
       margin-top: 4rem;
       font-size: 0.9rem;
-      color: #666;
+      color: var(--muted-color);
     }
+
+    em {
+      color: var(--muted-color);
+      display: block;
+      margin-bottom: 1rem;
+    }
+
     @media (max-width: 600px) {
       h1 {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
       }
-      p {
-        font-size: 1rem;
+      h2 {
+        font-size: 1.3rem;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="/logo.png" alt="ClaytonStrategy Logo" />
-  </header>
-  <main>
+    <img src="logo.png" alt="ClaytonStrategy Logo" />
     <h1>Advisory for Founders at the Frontier</h1>
     <p>
-      I'm Clayton. I help ambitious founders and innovation leaders turn AI, product, and GTM strategies into reality. If you're building something bold, let's make it sharper.
+      I'm Clayton — a product strategist and builder. I help founders and fast-moving teams bring clarity to chaos, turning AI, GTM, and product ideas into traction and transformation.
     </p>
-    <div class="cta">
-      <a href="mailto:info@claytonstrategy.com">Get in Touch</a>
-    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <h2>What I Help With</h2>
+      <div class="services">
+        <div class="service-block">
+          <h3>AI Strategy & Positioning</h3>
+          <p>Clarify how AI fits your product vision and roadmap. I help teams go from buzz to business value — ethically, fast, and creatively.</p>
+        </div>
+        <div class="service-block">
+          <h3>GTM & Narrative Design</h3>
+          <p>Launches, messaging, growth motions. We’ll build storylines and distribution that actually resonate with your target buyers.</p>
+        </div>
+        <div class="service-block">
+          <h3>Product & Advisory Work</h3>
+          <p>Need embedded support? Fractional product and advisory services to help your team scale without bloating headcount.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Why Work With Me?</h2>
+      <p>
+        I’ve spent a decade leading product and GTM at high-growth startups and public companies. My work lives at the edge — where ideas meet execution.
+      </p>
+      <p>
+        My superpower? Bridging product and storytelling so people <em>*get it*</em>, want it, and use it.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Client Feedback</h2>
+      <p><em>“Clayton has a rare combination of strategy and empathy. He helped us nail our GTM plan and make AI make sense to our users.”</em> – Early-Stage Founder</p>
+      <p><em>“His questions alone were worth the advisory retainer.”</em> – B2B SaaS CEO</p>
+    </section>
+
+    <section class="section">
+      <h2>Let's Talk</h2>
+      <p>If you're building something ambitious and want sharp, honest guidance — I’d love to hear about it.</p>
+      <div class="cta">
+        <a href="mailto:info@claytonstrategy.com">Start a Conversation</a>
+      </div>
+    </section>
   </main>
+
   <footer>
-    &copy; 2025 ClaytonStrategy. All rights reserved.
+    &copy; 2025 ClaytonStrategy. Built with clarity.
   </footer>
 </body>
 </html>
+
 
