@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clayton Strategy - AI-Enabled Project Management Solutions</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Clayton Strategy - Go-to-Market Clarity & AI-Powered Execution</title>
+
     <style>
         /* Reset and base styles */
         * {
@@ -71,7 +71,7 @@
         
         /* Hero section */
         .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c') no-repeat center center/cover;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             height: 500px;
             display: flex;
             align-items: center;
@@ -107,6 +107,17 @@
         
         .btn:hover {
             background-color: #2980b9;
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid #3498db;
+            color: #3498db;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #3498db;
+            color: white;
         }
         
         /* Services section */
@@ -161,6 +172,15 @@
             margin-bottom: 20px;
         }
         
+        .service-card .result {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-style: italic;
+            color: #2c3e50;
+        }
+        
         /* About section */
         .about {
             padding: 80px 0;
@@ -191,29 +211,70 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
-        /* Testimonials */
-        .testimonials {
+        /* Results section */
+        .results {
             padding: 80px 0;
             background-color: #2c3e50;
             color: white;
         }
         
-        .testimonial-card {
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .result-card {
             background-color: rgba(255, 255, 255, 0.1);
             padding: 30px;
             border-radius: 8px;
+            text-align: center;
+        }
+        
+        .result-number {
+            font-size: 48px;
+            font-weight: bold;
+            color: #3498db;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .result-description {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        .result-context {
+            font-size: 14px;
+            color: #bdc3c7;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .testimonial-card {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
             margin-bottom: 30px;
+            border-left: 4px solid #3498db;
         }
         
         .testimonial-text {
             font-style: italic;
             margin-bottom: 20px;
             font-size: 18px;
+            color: #555;
         }
         
         .testimonial-author {
             font-weight: 700;
             display: block;
+            color: #2c3e50;
         }
         
         .testimonial-position {
@@ -248,13 +309,6 @@
             display: flex;
             align-items: flex-start;
             margin-bottom: 30px;
-        }
-        
-        .contact-method i {
-            font-size: 24px;
-            color: #3498db;
-            margin-right: 20px;
-            min-width: 24px;
         }
         
         .contact-method h4 {
@@ -293,45 +347,33 @@
         .form-group textarea {
             height: 150px;
         }
+        
         .newsletter-signup {
-    padding: 80px 20px;
-    background-color: #ecf0f1;
-    text-align: center;
-}
+            padding: 80px 20px;
+            background-color: #ecf0f1;
+            text-align: center;
+        }
 
-.newsletter-signup h2 {
-    font-size: 36px;
-    color: #2c3e50;
-    margin-bottom: 20px;
-}
+        .newsletter-signup h2 {
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
 
-.newsletter-signup p {
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 30px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
+        .newsletter-signup p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-.newsletter-embed {
-    max-width: 600px;
-    margin: 0 auto;
-}
+        .newsletter-embed {
+            max-width: 600px;
+            margin: 0 auto;
+        }
 
-@media (max-width: 768px) {
-    .newsletter-signup h2 {
-        font-size: 28px;
-    }
-
-    .newsletter-signup p {
-        font-size: 16px;
-    }
-
-    .newsletter-embed iframe {
-        height: 360px;
-    }
-}
         /* Footer */
         footer {
             background-color: #2c3e50;
@@ -392,7 +434,8 @@
         @media (max-width: 768px) {
             .about-content,
             .expertise-grid,
-            .contact-grid {
+            .contact-grid,
+            .results-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -438,9 +481,9 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-content">
-            <h1>AI-Enabled Project Management for the New Economy</h1>
-            <p>Helping organizations navigate digital transformation with certified expertise and innovative strategies.</p>
-            <a href="#contact" class="btn">Schedule a Consultation</a>
+            <h1>Go-to-Market Clarity & AI-Powered Execution</h1>
+            <p>For founders stuck between strategy and action. From idea overload to a validated launch system in 30 days, no fluff, just real direction.</p>
+            <a href="#contact" class="btn">Book Your Strategy Sprint</a>
         </div>
     </section>
 
@@ -448,77 +491,73 @@
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
-                <h2>Strategic Services</h2>
-                <p>Leveraging PMP & CAPM expertise to help businesses thrive in the AI era</p>
+                <h2>Strategic Services To Drive Results</h2>
+                <p>Outcome guarantees, not hours. Fixed-fee engagements with measurable impact.</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>AI Integration Management</h3>
-                    <p>Expert guidance implementing AI tools into existing workflows while minimizing disruption. We help your team adapt to new technologies with structured change management.</p>
-                    <a href="#contact" class="btn">Learn More</a>
+                    <h3>🎯 GTM Strategy Scales</h3>
+                    <p>Using our Focused Execution™ framework to craft ICPs, revenue streams, and GTM systems tailored to your goals.</p>
+                    <div class="result">Clear path to validated market entry and first revenue</div>
+                    <a href="#contact" class="btn-secondary">Get Started →</a>
                 </div>
                 <div class="service-card">
-                    <h3>Distributed Team Orchestration</h3>
-                    <p>Specialized project management for remote and hybrid teams. We optimize communication, accountability, and productivity across distributed workforces.</p>
-                    <a href="#contact" class="btn">Learn More</a>
+                    <h3>🤖 AI Integration That Works</h3>
+                    <p>We help you evaluate data, align ops, and deploy AI use cases with measurable ROI, whether you are getting started or pivoting for growth.</p>
+                    <div class="result">Streamlined workflows and significant time savings</div>
+                    <a href="#contact" class="btn-secondary">Get Started →</a>
                 </div>
                 <div class="service-card">
-                    <h3>Digital Transformation Strategy</h3>
-                    <p>Comprehensive roadmaps for organizations transitioning to AI-enhanced operations. We identify opportunities for automation while preserving human expertise.</p>
-                    <a href="#contact" class="btn">Learn More</a>
-                </div>
-                <div class="service-card">
-                    <h3>Operational Efficiency Consulting</h3>
-                    <p>Do more with less. We help identify workflow bottlenecks and implement AI-driven solutions that maximize output while preserving quality and team cohesion.</p>
-                    <a href="#contact" class="btn">Learn More</a>
-                </div>
-                <div class="service-card">
-                    <h3>AI Prompt Engineering Training</h3>
-                    <p>Empower your team to leverage AI tools effectively. We provide customized training on prompt engineering and AI interaction to maximize productivity.</p>
-                    <a href="#contact" class="btn">Learn More</a>
-                </div>
-                <div class="service-card">
-                    <h3>Resilient Business Modeling</h3>
-                    <p>Future-proof your operations. We develop contingency plans and flexible business models designed to adapt quickly to technological disruption.</p>
-                    <a href="#contact" class="btn">Learn More</a>
+                    <h3>⚡ Launch Execution Sprints</h3>
+                    <p>30-day intensive engagements to take your product from concept to market-ready. Includes positioning, messaging, and initial traction strategies.</p>
+                    <div class="result">Market-ready positioning and launch foundation</div>
+                    <a href="#contact" class="btn-secondary">Get Started →</a>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Results Section - Currently Hidden -->
+    <!-- 
+    <section id="results" class="results">
+        <div class="container">
+            <div class="section-header">
+                <h2>Real Results From Real Clients</h2>
+                <p>The numbers that matter</p>
+            </div>
+            <div class="results-grid">
+                <div class="result-card">
+                    <span class="result-number">$180K</span>
+                    <div class="result-description">Revenue generated in first quarter</div>
+                    <div class="result-context">SaaS startup, 90-day GTM sprint</div>
+                </div>
+                <div class="result-card">
+                    <span class="result-number">65%</span>
+                    <div class="result-description">Reduction in manual processes</div>
+                    <div class="result-context">Professional services firm, AI integration</div>
+                </div>
+                <div class="result-card">
+                    <span class="result-number">3x</span>
+                    <div class="result-description">Increase in qualified leads</div>
+                    <div class="result-context">B2B services company, revenue ops setup</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
 
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container about-content">
             <div class="about-text">
-                <h2>About Clayton Strategy</h2>
-                <p>Founded on the principles of adaptability and forward-thinking project management, Clayton Strategy helps organizations navigate the rapidly evolving business landscape of the AI era.</p>
-                <p>With certified PMP and CAPM expertise, we bridge the gap between traditional project management methodologies and emerging AI technologies, ensuring our clients not only survive but thrive during this period of unprecedented change.</p>
-                <p>Our approach combines rigorous project management discipline with innovative thinking about how AI can enhance rather than replace human capabilities. We specialize in creating systems where humans and AI work collaboratively to achieve results neither could accomplish alone.</p>
+                <h2>Why Work With Clayton Strategy</h2>
+                <p><strong>Real GTM experience.</strong> Having launched products, built revenue systems, and scaled teams, this is tested strategy from experience.</p>
+                <p><strong>AI implementation expertise.</strong> While others talk about AI potential, I build working systems. Clients have saved real hours and generated real revenue with AI tools that actually work.</p>
+                <p><strong>Boutique model advantage.</strong> No giant teams, no overhead, no account managers. You work directly with us, we move fast, and we focus on what moves the needle for your specific business.</p>
+                <p><strong>Outcome-focused approach.</strong> I push results, not hours. If we do not hit the metrics agree upon, we keep working until we do.</p>
             </div>
             <div class="about-image">
                 <img src="ClaytonStrategyLogo.png" alt="Clayton Strategy Logo">
-            </div>
-        </div>
-    </section>
-
-    <!-- Expertise Section -->
-    <section class="cta-bar">
-        <div class="container cta-content">
-            <h3>Our Core Expertise</h3>
-            <p>Certified skills reimagined for the AI economy</p>
-            <div class="expertise-grid">
-                <div class="expertise-card">
-                    <h4>PMP & CAPM Certified</h4>
-                    <p>Industry-standard project management methodologies adapted for AI integration</p>
-                </div>
-                <div class="expertise-card">
-                    <h4>AI Implementation</h4>
-                    <p>Strategic deployment of AI tools to enhance human capabilities</p>
-                </div>
-                <div class="expertise-card">
-                    <h4>Change Management</h4>
-                    <p>Guiding teams through technological transformation with minimal disruption</p>
-                </div>
             </div>
         </div>
     </section>
@@ -529,53 +568,78 @@
         <div class="container">
             <div class="section-header">
                 <h2>Client Success Stories</h2>
-                <p>Hear from organizations we've helped navigate digital transformation</p>
+                <p>From strategy to execution, real results</p>
             </div>
             <div class="testimonial-card">
-                <p class="testimonial-text">"Clayton Strategy helped us implement AI tools across our marketing department while maintaining team cohesion. Their project management approach made what could have been a chaotic transition feel structured and purposeful."</p>
-                <span class="testimonial-author">Sarah Johnson</span>
-                <span class="testimonial-position">Marketing Director, TechFirm Inc.</span>
+                <p class="testimonial-text">"Within weeks, we cut GTM friction by 50% and pre-qualified pipeline doubled. Clayton's framework gave us the clarity we needed to stop spinning our wheels and start converting."</p>
+                <span class="testimonial-author">Sarah Mitchell</span>
+                <span class="testimonial-position">Founder, TechFlow Solutions</span>
             </div>
             <div class="testimonial-card">
-                <p class="testimonial-text">"The operational efficiency consulting we received helped us identify exactly where AI could add value and where human expertise remained essential. This balanced approach saved us from costly mistakes while still achieving significant productivity gains."</p>
-                <span class="testimonial-author">Michael Chen</span>
-                <span class="testimonial-position">Operations Manager, Global Solutions</span>
+                <p class="testimonial-text">"The AI opportunities Clayton surfaced delivered a 30% efficiency gain within 6 months. More importantly, the implementation actually stuck—our team uses these tools every day."</p>
+                <span class="testimonial-author">Marcus Rodriguez</span>
+                <span class="testimonial-position">Operations Director, Scale Dynamics</span>
             </div>
         </div>
     </section>
     -->
+    <!-- Expertise Section -->
+    <section class="cta-bar">
+        <div class="container cta-content">
+            <h3>How We Stack Up</h3>
+            <p>Proven frameworks, accessible pricing, measurable results</p>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <h4>Strategic Foundation</h4>
+                    <p>PMP, CAPM, Microsoft certified with real-world GTM experience across multiple industries</p>
+                </div>
+                <div class="expertise-card">
+                    <h4>Technical Implementation</h4>
+                    <p>Hands-on AI integration expertise, systems, not just the strategy</p>
+                </div>
+                <div class="expertise-card">
+                    <h4>Results Guarantee</h4>
+                    <p>Fixed-fee engagements with measurable outcomes. We hit our targets or keep working.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <h2>Ready to Transform Your Business?</h2>
-                <p>Schedule a free 30-minute consultation to discuss your organization's needs</p>
+                <h2>Ready to Stop Spinning Your Wheels?</h2>
+                <p>Let's talk about turning your ideas into a revenue-generating system. Investment depends on scope—most engagements start with a strategy sprint.</p>
             </div>
             <div class="contact-grid">
                 <div class="contact-info">
-                    <h3>Get in Touch</h3>
-                    <p>Have questions about our services or need more information? We are here to help!</p>
+                    <h3>Get Started Today</h3>
+                    <p><strong>The process is simple:</strong><br>
+                    1. 30-minute discovery call to understand your situation<br>
+                    2. Custom proposal with fixed pricing and guaranteed outcomes<br>
+                    3. Working systems and measurable results within 30 days</p>
+                    
                     <div class="contact-method">
-                        <i class="fas fa-envelope"></i>
+                        <span style="font-size: 24px; color: #3498db; margin-right: 20px; min-width: 24px;">✉</span>
                         <div>
                             <h4>Email</h4>
                             <p>info@claytonstrategy.com</p>
                         </div>
                     </div>
                     <div class="contact-method">
-                        <i class="fas fa-phone"></i>
+                        <span style="font-size: 24px; color: #3498db; margin-right: 20px; min-width: 24px;">📞</span>
                         <div>
                             <h4>Phone</h4>
                             <p>(512) 431-7833</p>
                         </div>
                     </div>
                     <div class="contact-method">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <span style="font-size: 24px; color: #3498db; margin-right: 20px; min-width: 24px;">📍</span>
                         <div>
                             <h4>Location</h4>
                             <p>Austin, TX area</p>
-                            <p>Available for remote consulting</p>
+                            <p>Available nationwide</p>
                         </div>
                     </div>
                 </div>
@@ -594,23 +658,23 @@
                             <input type="text" id="company" name="company">
                         </div>
                         <div class="form-group">
-                            <label for="service">Service of Interest</label>
-                            <select id="service" name="service">
-                                <option value="">Select a Service...</option>
-                                <option value="ai-integration">AI Integration Management</option>
-                                <option value="distributed-teams">Distributed Team Orchestration</option>
-                                <option value="digital-transformation">Digital Transformation Strategy</option>
-                                <option value="efficiency-consulting">Operational Efficiency Consulting</option>
-                                <option value="prompt-engineering">AI Prompt Engineering Training</option>
-                                <option value="resilient-business">Resilient Business Modeling</option>
-                                <option value="other">Other (Please specify)</option>
+                            <label for="challenge">Biggest Challenge Right Now</label>
+                            <select id="challenge" name="challenge">
+                                <option value="">Select your main challenge...</option>
+                                <option value="gtm-strategy">Need clear GTM strategy and execution plan</option>
+                                <option value="ai-integration">Want to implement AI but don't know where to start</option>
+                                <option value="revenue-systems">Need predictable revenue generation systems</option>
+                                <option value="launch-execution">Ready to launch but need execution support</option>
+                                <option value="team-training">Team needs AI training and adoption</option>
+                                <option value="growth-scaling">Scaling challenges and growth strategy</option>
+                                <option value="other">Other (Please specify below)</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="message">How can we help?</label>
-                            <textarea id="message" name="message" required></textarea>
+                            <label for="message">Tell me more about your situation</label>
+                            <textarea id="message" name="message" placeholder="What's your current revenue? Team size? What have you tried? What's not working?" required></textarea>
                         </div>
-                        <button type="submit" class="btn">Schedule Consultation</button>
+                        <button type="submit" class="btn">Book Strategy Call</button>
                     </form>
                 </div>
             </div>
