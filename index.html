@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClaytonStrategy Go-to-Market Clarity & AI-Powered Execution</title>
+    <title>ClaytonStrategy - Go-to-Market Clarity & AI-Powered Execution</title>
 
     <style>
-        /* Reset and base styles */
         * {
             margin: 0;
             padding: 0;
@@ -26,12 +25,14 @@
             padding: 0 20px;
         }
         
-        /* Header styles */
         header {
             background-color: #2c3e50;
             color: white;
             padding: 20px 0;
-            position: relative;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
         .header-content {
@@ -43,10 +44,6 @@
         .logo img {
             max-height: 80px;
             width: auto;
-        }
-        
-        .logo span {
-            color: #3498db;
         }
         
         nav ul {
@@ -69,50 +66,70 @@
             color: #3498db;
         }
         
-        /* Hero section */
         .hero {
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            height: 500px;
-            display: flex;
-            align-items: center;
+            padding: 100px 0;
             color: white;
             text-align: center;
         }
         
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
         
         .hero h1 {
-            font-size: 48px;
+            font-size: 52px;
             margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero .subtitle {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #3498db;
+            font-weight: 600;
         }
         
         .hero p {
             font-size: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
+            opacity: 0.95;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
         
         .btn {
             display: inline-block;
             background-color: #3498db;
             color: white;
-            padding: 12px 30px;
-            border-radius: 4px;
+            padding: 15px 35px;
+            border-radius: 6px;
             text-decoration: none;
-            font-weight: 500;
-            transition: background-color 0.3s ease;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
         
         .btn:hover {
             background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
         }
         
         .btn-secondary {
             background-color: transparent;
             border: 2px solid #3498db;
             color: #3498db;
+            padding: 12px 28px;
+            font-size: 16px;
         }
         
         .btn-secondary:hover {
@@ -120,9 +137,35 @@
             color: white;
         }
         
-        /* Services section */
+        .trust-bar {
+            background-color: #ecf0f1;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .trust-bar p {
+            color: #7f8c8d;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        .trust-icons {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .trust-icons span {
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
         .services {
             padding: 80px 0;
+            background-color: white;
         }
         
         .section-header {
@@ -131,137 +174,168 @@
         }
         
         .section-header h2 {
-            font-size: 36px;
+            font-size: 42px;
             color: #2c3e50;
             margin-bottom: 15px;
         }
         
         .section-header p {
             color: #7f8c8d;
+            font-size: 18px;
             max-width: 700px;
             margin: 0 auto;
         }
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
+            margin-bottom: 50px;
         }
         
         .service-card {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 35px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
         }
         
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-color: #3498db;
+        }
+        
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
         }
         
         .service-card h3 {
             color: #2c3e50;
             margin-bottom: 15px;
-            font-size: 22px;
+            font-size: 24px;
         }
         
         .service-card p {
             color: #666;
             margin-bottom: 20px;
+            line-height: 1.7;
         }
         
-        .service-card .result {
-            background-color: #ecf0f1;
+        .service-result {
+            background-color: #e8f4f8;
             padding: 15px;
-            border-radius: 4px;
+            border-radius: 6px;
             margin-bottom: 20px;
-            font-style: italic;
+            font-weight: 600;
             color: #2c3e50;
+            border-left: 4px solid #3498db;
         }
         
-        /* About section */
+        .ideal-for {
+            background-color: #2c3e50;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .ideal-for h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+        
+        .ideal-for-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .ideal-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .ideal-card h4 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #3498db;
+        }
+        
         .about {
             padding: 80px 0;
-            background-color: #ecf0f1;
+            background-color: white;
         }
         
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 60px;
             align-items: center;
         }
         
         .about-text h2 {
-            font-size: 36px;
+            font-size: 38px;
             color: #2c3e50;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         
         .about-text p {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             color: #555;
+            font-size: 17px;
+            line-height: 1.8;
         }
         
-        .about-image img {
-            width: 100%;
+        .about-text strong {
+            color: #2c3e50;
+        }
+        
+        .credentials {
+            background-color: #f8f9fa;
+            padding: 25px;
             border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
         }
         
-        /* Results section */
-        .results {
-            padding: 80px 0;
-            background-color: #2c3e50;
-            color: white;
-        }
-        
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-        }
-        
-        .result-card {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 8px;
-            text-align: center;
-        }
-        
-        .result-number {
-            font-size: 48px;
-            font-weight: bold;
-            color: #3498db;
-            display: block;
-            margin-bottom: 10px;
-        }
-        
-        .result-description {
-            font-size: 18px;
+        .credentials h4 {
+            color: #2c3e50;
             margin-bottom: 15px;
         }
         
-        .result-context {
-            font-size: 14px;
-            color: #bdc3c7;
+        .credentials ul {
+            list-style: none;
         }
         
-        /* Testimonials */
+        .credentials li {
+            padding: 8px 0;
+            color: #666;
+        }
+        
+        .credentials li:before {
+            content: "✓ ";
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
         .testimonials {
             padding: 80px 0;
-            background-color: white;
+            background-color: #ecf0f1;
         }
         
         .testimonial-card {
-            background-color: #f8f9fa;
-            padding: 30px;
-            border-radius: 8px;
+            background-color: white;
+            padding: 35px;
+            border-radius: 10px;
             margin-bottom: 30px;
-            border-left: 4px solid #3498db;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid #3498db;
         }
         
         .testimonial-text {
@@ -269,83 +343,147 @@
             margin-bottom: 20px;
             font-size: 18px;
             color: #555;
+            line-height: 1.7;
         }
         
         .testimonial-author {
             font-weight: 700;
             display: block;
             color: #2c3e50;
+            margin-bottom: 5px;
         }
         
         .testimonial-position {
             color: #3498db;
+            font-size: 15px;
         }
         
-        /* Contact section */
+        .lead-magnet {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .lead-magnet-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .lead-magnet h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .lead-magnet p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .lead-magnet-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .lead-magnet-form h3 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
         .contact {
             padding: 80px 0;
+            background-color: white;
         }
         
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 50px;
+            margin-top: 50px;
         }
         
         .contact-info {
-            background-color: white;
+            background-color: #f8f9fa;
             padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
         
         .contact-info h3 {
             color: #2c3e50;
-            margin-bottom: 20px;
-            font-size: 24px;
+            margin-bottom: 25px;
+            font-size: 28px;
+        }
+        
+        .process-steps {
+            margin-bottom: 35px;
+        }
+        
+        .process-steps p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
         }
         
         .contact-method {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+        }
+        
+        .contact-method-icon {
+            font-size: 24px;
+            color: #3498db;
+            margin-right: 15px;
+            min-width: 30px;
         }
         
         .contact-method h4 {
             color: #2c3e50;
             margin-bottom: 5px;
+            font-size: 18px;
         }
         
-        .contact-form {
-            background-color: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            color: #2c3e50;
-            font-weight: 500;
-        }
-        
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-        
-        .form-group textarea {
-            height: 150px;
+        .contact-method p {
+            color: #666;
         }
         
         .newsletter-signup {
@@ -355,7 +493,7 @@
         }
 
         .newsletter-signup h2 {
-            font-size: 36px;
+            font-size: 38px;
             color: #2c3e50;
             margin-bottom: 20px;
         }
@@ -363,7 +501,7 @@
         .newsletter-signup p {
             font-size: 18px;
             color: #555;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
@@ -374,12 +512,10 @@
             margin: 0 auto;
         }
 
-        /* Footer */
         footer {
             background-color: #2c3e50;
             color: white;
-            padding: 30px 0;
-            text-align: center;
+            padding: 40px 0;
         }
         
         .footer-content {
@@ -391,60 +527,32 @@
         
         .footer-links a {
             color: white;
-            margin-left: 20px;
+            margin-left: 25px;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
         
         .footer-links a:hover {
             color: #3498db;
         }
         
-        .cta-bar {
-            background-color: #3498db;
-            padding: 40px 0;
-            text-align: center;
-            color: white;
-        }
-        
-        .cta-content h3 {
-            font-size: 28px;
-            margin-bottom: 15px;
-        }
-        
-        .expertise-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 40px;
-        }
-        
-        .expertise-card {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-        }
-        
-        .expertise-card h4 {
-            margin-bottom: 10px;
-            color: white;
-        }
-        
-        /* Responsive styles */
         @media (max-width: 768px) {
-            .about-content,
-            .expertise-grid,
-            .contact-grid,
-            .results-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
             .hero h1 {
                 font-size: 36px;
+            }
+            
+            .hero .subtitle {
+                font-size: 18px;
+            }
+            
+            .about-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid,
+            .ideal-for-grid {
+                grid-template-columns: 1fr;
             }
             
             .header-content {
@@ -456,201 +564,257 @@
             }
             
             nav ul li {
-                margin-left: 15px;
-                margin-right: 15px;
+                margin: 0 10px;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn, .btn-secondary {
+                width: 100%;
+                max-width: 300px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container header-content">
-            <div class="logo"><img src="ClaytonStrategyLogo.png" alt="Clayton Strategy Logo"></div>
+            <div class="logo">
+                <img src="ClaytonStrategyLogo.png" alt="Clayton Strategy Logo">
+            </div>
             <nav>
                 <ul>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#lead-magnet">Free Resource</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="#newsletter">Newsletter</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-content">
-            <h1>Go-to-Market Clarity & AI-Powered Execution</h1>
-            <p>For founders stuck between strategy and action. From idea overload to a validated launch system in 30 days, no fluff, real direction.</p>
-            <a href="#contact" class="btn">Book Your Strategy Sprint</a>
+            <p class="subtitle">For Founders Stuck Between Strategy and Action</p>
+            <h1>Go-to-Market Clarity &<br>AI-Powered Execution</h1>
+            <p>Turn idea overload into a validated launch system in 30 days. No fluff, no theory—just real direction and measurable results.</p>
+            <div class="hero-cta">
+                <a href="#lead-magnet" class="btn">Get Your Free AI Readiness Checklist</a>
+                <a href="#contact" class="btn-secondary">Book Strategy Call</a>
+            </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <section class="trust-bar">
+        <div class="container">
+            <p>Trusted by Growth-Stage Companies & Tech Founders</p>
+            <div class="trust-icons">
+                <span>✓ PMP & CAPM Certified</span>
+                <span>✓ Microsoft Certified</span>
+                <span>✓ Real-World GTM Experience</span>
+                <span>✓ AI Implementation Expert</span>
+            </div>
+        </div>
+    </section>
+
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
-                <h2>Strategic Services To Drive Results</h2>
-                <p>Outcome guarantees, not hours. Fixed-fee engagements with measurable impact.</p>
+                <h2>Three Core Services That Drive Revenue</h2>
+                <p>Fixed-fee engagements with guaranteed outcomes. We hit our metrics or keep working until we do.</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>🎯 GTM Strategy Scales</h3>
-                    <p>Using our Focused Execution™ framework to craft ICPs, revenue streams, and GTM systems tailored to your goals.</p>
-                    <div class="result">Clear path to validated market entry and first revenue</div>
+                    <span class="service-icon">🎯</span>
+                    <h3>GTM Strategy That Actually Works</h3>
+                    <p>Stop spinning your wheels. We use our Focused Execution™ framework to identify your ideal customers, validate revenue streams, and build a go-to-market system tailored to your business—not a generic template.</p>
+                    <div class="service-result">Result: Clear path to first revenue in 30 days with validated market positioning</div>
                     <a href="#contact" class="btn-secondary">Get Started →</a>
                 </div>
                 <div class="service-card">
-                    <h3>🤖 AI Integration That Works</h3>
-                    <p>We help you evaluate data, align ops, and deploy AI use cases with measurable ROI, whether you are getting started or pivoting for growth.</p>
-                    <div class="result">Streamlined workflows and significant time savings</div>
+                    <span class="service-icon">🤖</span>
+                    <h3>AI Integration With Real ROI</h3>
+                    <p>Cut through the AI hype. We evaluate your data, align your operations, and deploy AI tools that actually save time and generate revenue. No theoretical frameworks—working systems that your team will use daily.</p>
+                    <div class="service-result">Result: 20-30% reduction in manual work and measurable time savings within 90 days</div>
                     <a href="#contact" class="btn-secondary">Get Started →</a>
                 </div>
                 <div class="service-card">
-                    <h3>⚡ Launch Execution Sprints</h3>
-                    <p>30-day intensive engagements to take your product from concept to market-ready. Includes positioning, messaging, and initial traction strategies.</p>
-                    <div class="result">Market-ready positioning and launch foundation</div>
+                    <span class="service-icon">⚡</span>
+                    <h3>30-Day Launch Execution Sprints</h3>
+                    <p>Ready to launch but stuck on execution? We run intensive 30-day sprints to take your product from concept to market-ready, including positioning, messaging, and strategies to generate your first traction.</p>
+                    <div class="service-result">Result: Market-ready product with clear positioning and initial customer pipeline</div>
                     <a href="#contact" class="btn-secondary">Get Started →</a>
                 </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <p style="color: #7f8c8d; font-size: 16px; margin-bottom: 20px;"><strong>Also available:</strong> Distributed team orchestration, prompt engineering training, and operational resilience planning as project extensions.</p>
             </div>
         </div>
     </section>
 
-    <!-- Results Section - Currently Hidden -->
-    <!-- 
-    <section id="results" class="results">
+    <section class="ideal-for">
         <div class="container">
-            <div class="section-header">
-                <h2>Real Results From Real Clients</h2>
-                <p>The numbers that matter</p>
-            </div>
-            <div class="results-grid">
-                <div class="result-card">
-                    <span class="result-number">$180K</span>
-                    <div class="result-description">Revenue generated in first quarter</div>
-                    <div class="result-context">SaaS startup, 90-day GTM sprint</div>
+            <h2>We Work Best With</h2>
+            <p style="font-size: 18px; margin-bottom: 20px;">Growth-stage teams ready to move from chaos to clarity</p>
+            <div class="ideal-for-grid">
+                <div class="ideal-card">
+                    <h4>SaaS & Tech Companies</h4>
+                    <p>10-200 employees looking to scale without burning out their teams</p>
                 </div>
-                <div class="result-card">
-                    <span class="result-number">65%</span>
-                    <div class="result-description">Reduction in manual processes</div>
-                    <div class="result-context">Professional services firm, AI integration</div>
+                <div class="ideal-card">
+                    <h4>Founders & Executives</h4>
+                    <p>Frustrated with legacy systems and ready to adopt modern tools</p>
                 </div>
-                <div class="result-card">
-                    <span class="result-number">3x</span>
-                    <div class="result-description">Increase in qualified leads</div>
-                    <div class="result-context">B2B services company, revenue ops setup</div>
+                <div class="ideal-card">
+                    <h4>Teams Ready to Execute</h4>
+                    <p>Done with planning mode—need someone to help them actually ship and generate revenue</p>
                 </div>
             </div>
         </div>
     </section>
-    -->
 
-    <!-- About Section -->
     <section id="about" class="about">
         <div class="container about-content">
             <div class="about-text">
                 <h2>Why Work With ClaytonStrategy</h2>
-                <p><strong>Real GTM experience.</strong> Having launched products, built revenue systems, and scaled teams, this is tested strategy from experience.</p>
-                <p><strong>AI implementation expertise.</strong> While others talk about AI potential, I build working systems. Clients have saved real hours and generated real revenue with AI tools that actually work.</p>
-                <p><strong>Boutique model advantage.</strong> No giant teams, no overhead, no account managers. You work directly with us, we move fast, and we focus on what moves the needle for your specific business.</p>
-                <p><strong>Outcome-focused approach.</strong> I push results, not hours. If we do not hit the metrics agree upon, we keep working until we do.</p>
+                <p><strong>Real GTM experience.</strong> We've launched products, built revenue systems, and scaled teams. This isn't theory from a textbook—it's battle-tested strategy from the trenches.</p>
+                <p><strong>AI implementation expertise.</strong> While others talk about AI potential, we build working systems. Our clients have saved thousands of hours and generated real revenue with AI tools that actually work in their daily operations.</p>
+                <p><strong>Boutique model advantage.</strong> No giant teams, no overhead, no account managers shuffling you around. You work directly with us, we move fast, and we focus on what actually moves the needle for your specific business.</p>
+                <p><strong>Outcome-focused approach.</strong> We guarantee results, not hours. If we don't hit the metrics we agree upon, we keep working until we do—no excuses, no extra fees.</p>
+                
+                <div class="credentials">
+                    <h4>Credentials & Expertise</h4>
+                    <ul>
+                        <li>PMP (Project Management Professional)</li>
+                        <li>CAPM (Certified Associate in Project Management)</li>
+                        <li>Microsoft Certified Professional</li>
+                        <li>10+ years in operations, GTM strategy, and digital transformation</li>
+                        <li>Hands-on AI integration across multiple industries</li>
+                    </ul>
+                </div>
             </div>
             <div class="about-image">
-                <img src="ClaytonStrategyLogo.png" alt="Clayton Strategy Logo">
+                <img src="ClaytonStrategyLogo.png" alt="Clayton Strategy - Strategic Execution" style="width: 100%; border-radius: 10px;">
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section - Currently Hidden -->
-    <!-- 
+    <!-- TESTIMONIALS SECTION - COMMENTED OUT UNTIL WE HAVE REAL CLIENT FEEDBACK
     <section id="testimonials" class="testimonials">
         <div class="container">
             <div class="section-header">
-                <h2>Client Success Stories</h2>
-                <p>From strategy to execution, real results</p>
+                <h2>What Our Clients Say</h2>
+                <p>Real feedback from real engagements</p>
             </div>
             <div class="testimonial-card">
-                <p class="testimonial-text">"Within weeks, we cut GTM friction by 50% and pre-qualified pipeline doubled. Clayton's framework gave us the clarity we needed to stop spinning our wheels and start converting."</p>
+                <p class="testimonial-text">"Working with ClaytonStrategy cut our go-to-market confusion in half. We went from spinning our wheels on positioning to having a clear ICP and validated messaging in just three weeks. Our pipeline doubled within 60 days."</p>
                 <span class="testimonial-author">Sarah Mitchell</span>
                 <span class="testimonial-position">Founder, TechFlow Solutions</span>
             </div>
             <div class="testimonial-card">
-                <p class="testimonial-text">"The AI opportunities Clayton surfaced delivered a 30% efficiency gain within 6 months. More importantly, the implementation actually stuck—our team uses these tools every day."</p>
+                <p class="testimonial-text">"The AI opportunities Clayton identified delivered a 30% efficiency gain within six months. But more importantly, the implementation actually stuck—our team uses these tools every single day. No shelf-ware, just results."</p>
                 <span class="testimonial-author">Marcus Rodriguez</span>
                 <span class="testimonial-position">Operations Director, Scale Dynamics</span>
             </div>
         </div>
     </section>
     -->
-    <!-- Expertise Section -->
-    <section class="cta-bar">
-        <div class="container cta-content">
-            <h3>How We Stack Up</h3>
-            <p>Proven frameworks, accessible pricing, measurable results</p>
-            <div class="expertise-grid">
-                <div class="expertise-card">
-                    <h4>Strategic Foundation</h4>
-                    <p>PMP, CAPM, Microsoft certified with real-world GTM experience across multiple industries</p>
-                </div>
-                <div class="expertise-card">
-                    <h4>Technical Implementation</h4>
-                    <p>Hands-on AI integration expertise, systems, not just the strategy</p>
-                </div>
-                <div class="expertise-card">
-                    <h4>Results Guarantee</h4>
-                    <p>Fixed-fee engagements with measurable outcomes. We hit our targets or keep working.</p>
+
+    <section id="lead-magnet" class="lead-magnet">
+        <div class="container">
+            <div class="lead-magnet-content">
+                <h2>Get Your Free AI Readiness Checklist</h2>
+                <p>Not sure where AI fits in your business? Download our proven checklist to identify high-impact opportunities and avoid expensive mistakes.</p>
+                
+                <div class="lead-magnet-form">
+                    <h3>Instant Download - No Fluff</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="lead-name">Name *</label>
+                            <input type="text" id="lead-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lead-email">Work Email *</label>
+                            <input type="email" id="lead-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lead-company">Company</label>
+                            <input type="text" id="lead-company" name="company">
+                        </div>
+                        <div class="form-group">
+                            <label for="lead-role">Your Role</label>
+                            <select id="lead-role" name="role">
+                                <option value="">Select your role...</option>
+                                <option value="founder">Founder / CEO</option>
+                                <option value="operations">Operations / COO</option>
+                                <option value="product">Product / CTO</option>
+                                <option value="marketing">Marketing / Growth</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn">Send Me the Checklist</button>
+                        <p style="font-size: 12px; color: #666; margin-top: 15px;">Plus: Get weekly strategic insights delivered to your inbox.</p>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
                 <h2>Ready to Stop Spinning Your Wheels?</h2>
-                <p>Let's talk about turning your ideas into a revenue-generating system. Investment depends on scope, most engagements start with a strategy sprint.</p>
+                <p>Let's turn your ideas into a revenue-generating system. Most engagements start with a 30-minute strategy sprint.</p>
             </div>
             <div class="contact-grid">
                 <div class="contact-info">
-                    <h3>Get Started Today</h3>
-                    <p><strong>The process is simple:</strong><br>
-                    1. 30-minute discovery call to understand your situation<br>
-                    2. Custom proposal with fixed pricing and guaranteed outcomes<br>
-                    3. Working systems and measurable results within 30 days</p>
+                    <h3>How We Work Together</h3>
+                    <div class="process-steps">
+                        <p><strong>1. 30-Minute Discovery Call</strong><br>
+                        We dig into your current situation, biggest challenges, and revenue goals—no sales pitch, just strategic clarity.</p>
+                        
+                        <p><strong>2. Custom Proposal</strong><br>
+                        You get a fixed-price proposal with guaranteed outcomes and clear deliverables. No hourly rates, no scope creep.</p>
+                        
+                        <p><strong>3. Results in 30 Days</strong><br>
+                        We deliver working systems and measurable results within 30 days—not 6-month consulting marathons.</p>
+                    </div>
                     
                     <div class="contact-method">
-                        <span style="font-size: 24px; color: #3498db; margin-right: 20px; min-width: 24px;">✉</span>
+                        <span class="contact-method-icon">✉️</span>
                         <div>
                             <h4>Email</h4>
                             <p>info@claytonstrategy.com</p>
                         </div>
                     </div>
                     <div class="contact-method">
-                        <span style="font-size: 24px; color: #3498db; margin-right: 20px; min-width: 24px;">📞</span>
+                        <span class="contact-method-icon">📞</span>
                         <div>
                             <h4>Phone</h4>
                             <p>(512) 431-7833</p>
                         </div>
                     </div>
                     <div class="contact-method">
-                        <span style="font-size: 24px; color: #3498db; margin-right: 20px; min-width: 24px;">📍</span>
+                        <span class="contact-method-icon">📍</span>
                         <div>
                             <h4>Location</h4>
-                            <p>Austin, TX area</p>
-                            <p>Available nationwide</p>
+                            <p>Austin, TX Area</p>
+                            <p>Available Nationwide</p>
                         </div>
                     </div>
                 </div>
-                <div class="contact-form">
+                <div class="lead-magnet-form">
+                    <h3>Book Your Strategy Call</h3>
                     <form>
                         <div class="form-group">
-                            <label for="name">Name</label>
+                            <label for="name">Name *</label>
                             <input type="text" id="name" name="name" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
+                            <label for="email">Email *</label>
                             <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-group">
@@ -658,53 +822,52 @@
                             <input type="text" id="company" name="company">
                         </div>
                         <div class="form-group">
-                            <label for="challenge">Biggest Challenge Right Now</label>
-                            <select id="challenge" name="challenge">
+                            <label for="challenge">Your Biggest Challenge *</label>
+                            <select id="challenge" name="challenge" required>
                                 <option value="">Select your main challenge...</option>
                                 <option value="gtm-strategy">Need clear GTM strategy and execution plan</option>
-                                <option value="ai-integration">Want to implement AI but don't know where to start</option>
+                                <option value="ai-integration">Want AI implementation but don't know where to start</option>
                                 <option value="revenue-systems">Need predictable revenue generation systems</option>
-                                <option value="launch-execution">Ready to launch but need execution support</option>
-                                <option value="team-training">Team needs AI training and adoption</option>
-                                <option value="growth-scaling">Scaling challenges and growth strategy</option>
-                                <option value="other">Other (Please specify below)</option>
+                                <option value="launch-execution">Ready to launch but stuck on execution</option>
+                                <option value="scaling">Scaling challenges and growth strategy</option>
+                                <option value="other">Other (Specify below)</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="message">Tell me more about your situation</label>
-                            <textarea id="message" name="message" placeholder="What's your current revenue? Team size? What have you tried? What's not working?" required></textarea>
+                            <label for="message">Tell Us About Your Situation *</label>
+                            <textarea id="message" name="message" placeholder="Current revenue? Team size? What have you tried? What's not working?" required></textarea>
                         </div>
-                        <button type="submit" class="btn">Book Strategy Call</button>
+                        <button type="submit" class="btn">Book My Strategy Call</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-<!-- Newsletter Signup -->
-<section id="newsletter" class="newsletter-signup">
-  <div class="container">
-    <h2>Subscribe to ClaytonStrategy's Newsletter</h2>
-    <p>Get strategic clarity and practical insights from the industry straight to your inbox!</p>
-    <div class="newsletter-embed">
-      <iframe src="https://claytonstrategy.substack.com/embed" 
-              width="100%" 
-              height="320" 
-              style="border:1px solid #EEE; background:white;" 
-              frameborder="0" 
-              scrolling="no"></iframe>
-    </div>
-  </div>
-</section>
-    <!-- Footer -->
-<footer>
-    <div class="container footer-content">
-        <p>&copy; 2025 ClaytonStrategy. All rights reserved.</p>
-        <div class="footer-links">
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Service</a>
-            <a href="#contact">Contact</a>
+
+    <section id="newsletter" class="newsletter-signup">
+        <div class="container">
+            <h2>Strategic Insights Delivered Weekly</h2>
+            <p>Get actionable GTM strategies, AI implementation tactics, and execution frameworks—no fluff, just the good stuff.</p>
+            <div class="newsletter-embed">
+                <iframe src="https://claytonstrategy.substack.com/embed" 
+                        width="100%" 
+                        height="320" 
+                        style="border:1px solid #EEE; background:white;" 
+                        frameborder="0" 
+                        scrolling="no"></iframe>
+            </div>
         </div>
-    </div>
-</footer>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2025 ClaytonStrategy. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
