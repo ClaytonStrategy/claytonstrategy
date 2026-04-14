@@ -11,197 +11,209 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClaytonStrategy | Community First Media</title>
+    <title>ClaytonStrategy | Media Portfolio</title>
 
     <style>
         :root {
             --primary: #ff5f6d;
             --secondary: #ffc371;
-            --anime-gold: #ffcc33;
-            --pet-green: #4ade80;
-            --text: #2d3436;
+            --dark: #1a1a1a;
+            --glass: rgba(255, 255, 255, 0.9);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
             font-family: 'Outfit', sans-serif; 
-            background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%); 
-            color: var(--text); 
+            background: #fdfdfd; 
+            color: #2d3436; 
             line-height: 1.6;
         }
         
-        .container { max-width: 1050px; margin: 0 auto; padding: 0 30px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
 
-        header { padding: 30px 0; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 24px; font-weight: 900; letter-spacing: -1px; color: #1a1a1a; display: flex; align-items: center; }
-        .logo span { color: var(--primary); margin-left: 2px; }
+        /* Navigation */
+        header { 
+            padding: 20px 0; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: sticky; 
+            top: 0; 
+            background: var(--glass); 
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #eee;
+        }
 
-        .hero { padding: 80px 0 60px; text-align: center; }
-        .hero h1 { font-size: clamp(3rem, 10vw, 4.5rem); line-height: 1; margin-bottom: 20px; font-weight: 900; color: #1a1a1a; }
-        .hero p { font-size: 22px; color: #636e72; max-width: 600px; margin: 0 auto; font-weight: 400; }
-
-        .brand-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 60px 0; }
+        .logo { font-size: 22px; font-weight: 900; color: var(--dark); text-decoration: none; }
+        .logo span { color: var(--primary); }
         
-        .brand-link { text-decoration: none; color: inherit; display: block; }
+        nav a { margin-left: 30px; text-decoration: none; color: #636e72; font-weight: 600; font-size: 15px; transition: 0.3s; }
+        nav a:hover { color: var(--primary); }
+
+        /* Newsletter Section (Top) */
+        .newsletter-hero { 
+            padding: 60px 0; 
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            color: white;
+            border-radius: 0 0 50px 50px;
+            text-align: center;
+        }
+
+        .n-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 20px; 
+            margin-top: 40px;
+        }
+
+        .n-card {
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.3s;
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+
+        .n-card:hover { background: rgba(255,255,255,0.15); transform: translateY(-5px); }
+        
+        .n-logo { width: 60px; height: 60px; border-radius: 15px; margin-bottom: 15px; background: #444; object-fit: cover; }
+
+        /* Ecosystem Section */
+        .section-title { margin: 80px 0 40px; text-align: center; }
+        .section-title h2 { font-size: 36px; font-weight: 900; }
+
+        .brand-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 80px; }
         
         .brand-card { 
             background: white; 
-            padding: 45px; 
+            padding: 40px; 
             border-radius: 40px; 
-            border: 2px solid transparent;
-            box-shadow: 0 20px 40px rgba(255, 95, 109, 0.05);
-            transition: all 0.3s ease;
-            height: 100%;
-        }
-
-        .brand-link:hover .brand-card {
-            transform: scale(1.03) rotate(1deg);
-            border-color: #ffeaea;
-            box-shadow: 0 30px 60px rgba(255, 95, 109, 0.1);
-        }
-
-        .card-icon { font-size: 40px; margin-bottom: 20px; display: block; }
-        .brand-card h3 { font-size: 24px; margin-bottom: 12px; font-weight: 800; }
-        .brand-card p { font-size: 16px; color: #636e72; }
-
-        .engine-section {
-            background: #1a1a1a;
-            color: white;
-            padding: 80px 50px;
-            border-radius: 50px;
-            margin-bottom: 80px;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 50px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
             align-items: center;
+            text-align: center;
+            border: 1px solid #f0f0f0;
         }
 
-        .engine-content h2 { font-size: 40px; margin-bottom: 20px; }
-        .engine-content p { color: #b2bec3; font-size: 18px; }
-
-        .method-list { list-style: none; margin-top: 30px; }
-        .method-list li { margin-bottom: 15px; padding-left: 30px; position: relative; font-weight: 500; }
-        .method-list li::before { content: "✦"; position: absolute; left: 0; color: var(--secondary); }
-
-        .newsletter-box {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            padding: 40px;
-            border-radius: 35px;
-            color: white;
+        .brand-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0,0,0,0.1); }
+        
+        .brand-logo { 
+            width: 100px; 
+            height: 100px; 
+            border-radius: 50%; 
+            margin-bottom: 20px; 
+            background: #eee; 
+            object-fit: cover;
+            border: 4px solid #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .newsletter-box h4 { font-size: 22px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
-        .n-item { margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.2); transition: 0.3s; }
-        .n-item:hover { transform: translateX(10px); }
-        .n-item a { color: white; text-decoration: none; display: block; }
-        .n-item:last-child { border: none; }
+        footer { text-align: center; padding: 60px 0; color: #94a3b8; border-top: 1px solid #eee; }
 
-        @media (max-width: 850px) {
-            .engine-section { grid-template-columns: 1fr; padding: 40px 30px; }
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .n-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
+<header>
+    <div class="container" style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+        <a href="#" class="logo">CLAYTON<span>STRATEGY</span></a>
+        <nav>
+            <a href="#newsletters">Newsletters</a>
+            <a href="#ecosystem">Social Ecosystem</a>
+            <a href="#about">The Strategy</a>
+        </nav>
+    </div>
+</header>
+
+<section id="newsletters" class="newsletter-hero">
+    <div class="container">
+        <span style="color: var(--secondary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px;">Direct Intelligence</span>
+        <h1 style="margin: 10px 0 40px;">Curated Newsletters</h1>
+        
+        <div class="n-grid">
+            <a href="https://ai-daily-pulse.beehiiv.com/" target="_blank" class="n-card">
+                <img src="REPLACE_WITH_AI_PULSE_LOGO_URL" alt="AI Pulse Logo" class="n-logo">
+                <h3>AI Daily Pulse</h3>
+                <p style="font-size: 14px; opacity: 0.8; margin-top: 10px;">The latest in digital innovation and agentic tools.</p>
+            </a>
+
+            <a href="https://crypto-daily-ca877c.beehiiv.com/" target="_blank" class="n-card">
+                <img src="REPLACE_WITH_CRYPTO_LOGO_URL" alt="Crypto Daily Logo" class="n-logo">
+                <h3>Crypto Daily</h3>
+                <p style="font-size: 14px; opacity: 0.8; margin-top: 10px;">Daily sentiment analysis and finance meta.</p>
+            </a>
+
+            <a href="https://anime-highlights.beehiiv.com/" target="_blank" class="n-card">
+                <img src="REPLACE_WITH_ANIME_NEWS_LOGO_URL" alt="Anime Highlights Logo" class="n-logo">
+                <h3>Anime & Comics</h3>
+                <p style="font-size: 14px; opacity: 0.8; margin-top: 10px;">Weekly highlights across the manga landscape.</p>
+            </a>
+        </div>
+    </div>
+</section>
+
 <div class="container">
-    <header>
-        <div class="logo">CLAYTON<span>STRATEGY</span></div>
-    </header>
-
-    <section class="hero">
-        <h1>Digital Culture, Scaled.</h1>
-        <p>A multi-niche media ecosystem built on authentic community engagement and trend curation.</p>
-    </section>
-
-    <div class="brand-grid">
-        <a href="https://www.facebook.com/profile.php?id=61583745277503" target="_blank" class="brand-link">
-            <div class="brand-card">
-                <span class="card-icon">⚔️</span>
-                <h3>Anime Shogun</h3>
-                <p>The definitive voice for power-scaling debates and character meta-analysis.</p>
-            </div>
-        </a>
-
-        <a href="https://www.facebook.com/profile.php?id=61586884830145" target="_blank" class="brand-link">
-            <div class="brand-card">
-                <span class="card-icon">🏴‍☠️</span>
-                <h3>Grand Line Gazette</h3>
-                <p>Weekly dispatch for the One Piece universe, reporting from the front lines of the Elbaf arc.</p>
-            </div>
-        </a>
-
-        <a href="https://www.facebook.com/profile.php?id=61574276562647" target="_blank" class="brand-link">
-            <div class="brand-card">
-                <span class="card-icon">🐾</span>
-                <h3>Pets Central</h3>
-                <p>A global community celebrating the stories and care of real-world pets.</p>
-            </div>
-        </a>
-
-        <a href="https://www.facebook.com/profile.php?id=61572079829666" target="_blank" class="brand-link">
-            <div class="brand-card">
-                <span class="card-icon">❤️</span>
-                <h3>Pet Parents</h3>
-                <p>The human side of the pet world—lifestyle, advice, and the bonds that define home.</p>
-            </div>
-        </a>
-
-        <a href="https://www.facebook.com/profile.php?id=61583673964423" target="_blank" class="brand-link">
-            <div class="brand-card">
-                <span class="card-icon">🌀</span>
-                <h3>Brosekai</h3>
-                <p>Deep dives into Isekai culture and alternative manga through a modern, curated lens.</p>
-            </div>
-        </a>
-
-        <a href="https://www.facebook.com/profile.php?id=61583695116359" target="_blank" class="brand-link">
-            <div class="brand-card">
-                <span class="card-icon">👑</span>
-                <h3>Manga Lord</h3>
-                <p>Historical deep-dives and comprehensive storytelling within the evolution of manga culture.</p>
-            </div>
-        </a>
+    <div id="ecosystem" class="section-title">
+        <h2>Social Media Ecosystem</h2>
+        <p style="color: #636e72;">Six high-engagement brands. Millions of interactions.</p>
     </div>
 
-    <section class="engine-section">
-        <div class="engine-content">
-            <h2>The Growth Engine</h2>
-            <p>Our approach balances data-driven insights with manual curation to ensure every post resonates with the core audience.</p>
-            <ul class="method-list">
-                <li>Bespoke Community Management</li>
-                <li>Niche-Specific Trend Analysis</li>
-                <li>High-Velocity Content Pipelines</li>
-                <li>Strategic Multi-Platform Synergy</li>
-            </ul>
-        </div>
-        
-        <div class="newsletter-box">
-            <h4>Direct Curations</h4>
-            <div class="n-item">
-                <a href="https://ai-daily-pulse.beehiiv.com/" target="_blank">
-                    <strong>AI Daily Pulse</strong>
-                    <p style="font-size: 14px; opacity: 0.9;">The latest in digital innovation and tooling.</p>
-                </a>
-            </div>
-            <div class="n-item">
-                <a href="https://crypto-daily-ca877c.beehiiv.com/" target="_blank">
-                    <strong>Crypto Daily</strong>
-                    <p style="font-size: 14px; opacity: 0.9;">Daily insights into the digital finance landscape.</p>
-                </a>
-            </div>
-            <div class="n-item">
-                <a href="https://anime-highlights.beehiiv.com/" target="_blank">
-                    <strong>Anime & Comics Highlights</strong>
-                    <p style="font-size: 14px; opacity: 0.9;">The Weekly Meta across the manga world.</p>
-                </a>
-            </div>
-        </div>
-    </section>
+    <div class="brand-grid">
+        <a href="https://www.facebook.com/profile.php?id=61583745277503" target="_blank" class="brand-card">
+            <img src="REPLACE_WITH_SHOGUN_LOGO_URL" alt="Anime Shogun" class="brand-logo">
+            <h3>Anime Shogun</h3>
+            <p>Battle debates and power-scaling meta.</p>
+        </a>
 
-    <footer style="text-align: center; padding: 40px 0; color: #94a3b8; font-size: 14px;">
-        <p>&copy; 2026 ClaytonStrategy. Built for the community, by the community.</p>
-    </footer>
+        <a href="https://www.facebook.com/profile.php?id=61586884830145" target="_blank" class="brand-card">
+            <img src="REPLACE_WITH_GAZETTE_LOGO_URL" alt="Grand Line Gazette" class="brand-logo">
+            <h3>Grand Line Gazette</h3>
+            <p>Live updates from the Elbaf arc and beyond.</p>
+        </a>
+
+        <a href="https://www.facebook.com/profile.php?id=61574276562647" target="_blank" class="brand-card">
+            <img src="REPLACE_WITH_PETS_CENTRAL_LOGO_URL" alt="Pets Central" class="brand-logo">
+            <h3>Pets Central</h3>
+            <p>Global community of authentic pet stories.</p>
+        </a>
+
+        <a href="https://www.facebook.com/profile.php?id=61572079829666" target="_blank" class="brand-card">
+            <img src="REPLACE_WITH_PET_PARENTS_LOGO_URL" alt="Pet Parents" class="brand-logo">
+            <h3>Pet Parents</h3>
+            <p>The human side of the pet ownership bond.</p>
+        </a>
+
+        <a href="https://www.facebook.com/profile.php?id=61583673964423" target="_blank" class="brand-card">
+            <img src="REPLACE_WITH_BROSEKAI_LOGO_URL" alt="Brosekai" class="brand-logo">
+            <h3>Brosekai</h3>
+            <p>Deep dives into the world of Isekai manga.</p>
+        </a>
+
+        <a href="https://www.facebook.com/profile.php?id=61583695116359" target="_blank" class="brand-card">
+            <img src="REPLACE_WITH_MANGA_LORD_LOGO_URL" alt="Manga Lord" class="brand-logo">
+            <h3>Manga Lord</h3>
+            <p>The historical archive of manga culture.</p>
+        </a>
+    </div>
 </div>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2026 ClaytonStrategy. Built for the community, by the community.</p>
+    </div>
+</footer>
 
 </body>
 </html>
