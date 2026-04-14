@@ -11,157 +11,207 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClaytonStrategy - Digital Ecosystem & AI Automation</title>
+    <title>ClaytonStrategy | Community First Media</title>
 
     <style>
+        :root {
+            --primary: #ff5f6d;
+            --secondary: #ffc371;
+            --anime-gold: #ffcc33;
+            --pet-green: #4ade80;
+            --text: #2d3436;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f8f9fa; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        header { background-color: #1a1a1a; color: white; padding: 20px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .header-content { display: flex; justify-content: space-between; align-items: center; }
-        .logo h1 { font-size: 24px; letter-spacing: -1px; text-transform: uppercase; }
-        .logo span { color: #6366f1; }
-        nav ul { display: flex; list-style: none; }
-        nav ul li { margin-left: 30px; }
-        nav ul li a { color: white; text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
-        nav ul li a:hover { color: #6366f1; }
+        body { 
+            font-family: 'Outfit', sans-serif; 
+            background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%); 
+            color: var(--text); 
+            line-height: 1.6;
+        }
         
-        .hero { background: linear-gradient(135deg, #1a1a1a 0%, #2d3436 100%); padding: 100px 0; color: white; text-align: center; }
-        .hero h1 { font-size: 52px; margin-bottom: 20px; line-height: 1.2; }
-        .hero .subtitle { font-size: 22px; margin-bottom: 15px; color: #6366f1; font-weight: 600; }
-        .hero p { font-size: 20px; margin-bottom: 35px; opacity: 0.9; }
+        .container { max-width: 1050px; margin: 0 auto; padding: 0 30px; }
 
-        .section-header { text-align: center; margin-bottom: 60px; padding-top: 80px; }
-        .section-header h2 { font-size: 42px; color: #1a1a1a; }
+        header { 
+            padding: 30px 0; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding-bottom: 80px; }
-        .card { background: white; border-radius: 12px; padding: 35px; transition: all 0.3s ease; border: 1px solid #eee; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-color: #6366f1; }
-        .card h3 { margin-bottom: 15px; font-size: 22px; }
-        .badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase; margin-bottom: 15px; }
-        .badge-news { background: #e0e7ff; color: #4338ca; }
-        .badge-comm { background: #fef3c7; color: #92400e; }
+        .logo { 
+            font-size: 24px; 
+            font-weight: 900; 
+            letter-spacing: -1px; 
+            color: #1a1a1a; 
+            display: flex; 
+            align-items: center; 
+        }
+        
+        .logo span { color: var(--primary); margin-left: 2px; }
 
-        .btn { display: inline-block; background-color: #6366f1; color: white; padding: 12px 25px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; margin-top: 15px; }
-        .btn:hover { background-color: #4f46e5; }
+        .hero { padding: 80px 0 60px; text-align: center; }
+        .hero h1 { font-size: clamp(3rem, 10vw, 4.5rem); line-height: 1; margin-bottom: 20px; font-weight: 900; color: #1a1a1a; }
+        .hero p { font-size: 22px; color: #636e72; max-width: 600px; margin: 0 auto; font-weight: 400; }
 
-        .lab-section { background: #1a1a1a; color: white; padding: 80px 0; }
-        .lab-content { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
-        .lab-text { flex: 1; min-width: 300px; }
-        .tag-cloud { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
-        .tag { background: #333; padding: 5px 15px; border-radius: 4px; font-family: monospace; font-size: 14px; }
+        /* Organic Grid */
+        .brand-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+            margin: 60px 0;
+        }
 
-        footer { background: #1a1a1a; color: #666; padding: 40px 0; text-align: center; border-top: 1px solid #333; }
+        .brand-card { 
+            background: white; 
+            padding: 45px; 
+            border-radius: 40px; 
+            border: 2px solid transparent;
+            box-shadow: 0 20px 40px rgba(255, 95, 109, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
 
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 36px; }
-            .header-content { flex-direction: column; gap: 20px; }
-            nav ul li { margin: 0 10px; }
+        .brand-card:hover {
+            transform: scale(1.03) rotate(1deg);
+            border-color: #ffeaea;
+            box-shadow: 0 30px 60px rgba(255, 95, 109, 0.1);
+        }
+
+        .card-icon { font-size: 40px; margin-bottom: 20px; display: block; }
+        .brand-card h3 { font-size: 24px; margin-bottom: 12px; font-weight: 800; }
+        .brand-card p { font-size: 16px; color: #636e72; }
+
+        /* The Strategy Section - "The Growth Engine" */
+        .engine-section {
+            background: #1a1a1a;
+            color: white;
+            padding: 80px 50px;
+            border-radius: 50px;
+            margin-bottom: 80px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .engine-content h2 { font-size: 40px; margin-bottom: 20px; }
+        .engine-content p { color: #b2bec3; font-size: 18px; }
+
+        .method-list { list-style: none; margin-top: 30px; }
+        .method-list li { 
+            margin-bottom: 15px; 
+            padding-left: 30px; 
+            position: relative; 
+            font-weight: 500;
+        }
+        .method-list li::before { 
+            content: "✦"; 
+            position: absolute; 
+            left: 0; 
+            color: var(--secondary); 
+        }
+
+        .newsletter-box {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 40px;
+            border-radius: 35px;
+            color: white;
+        }
+
+        .newsletter-box h4 { font-size: 22px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+        .n-item { margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.2); }
+        .n-item:last-child { border: none; }
+
+        @media (max-width: 850px) {
+            .engine-section { grid-template-columns: 1fr; padding: 40px 30px; }
         }
     </style>
 </head>
 <body>
+
+<div class="container">
     <header>
-        <div class="container header-content">
-            <div class="logo">
-                <h1>Clayton<span>Strategy</span></h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#newsletters">Newsletters</a></li>
-                    <li><a href="#communities">Communities</a></li>
-                    <li><a href="#shop">Shop</a></li>
-                    <li><a href="#lab">The Lab</a></li>
-                </ul>
-            </nav>
-        </div>
+        <div class="logo">CLAYTON<span>STRATEGY</span></div>
     </header>
 
     <section class="hero">
-        <div class="container">
-            <p class="subtitle">Digital Ecosystem & Automation</p>
-            <h1>The Strategy Behind the Content</h1>
-            <p>Scaling high-growth communities through AI automation and cultural insight.</p>
-        </div>
+        <h1>Digital Culture, Scaled.</h1>
+        <p>We build high-engagement media brands centered around authentic community storytelling.</p>
     </section>
 
-    <section id="newsletters" class="container">
-        <div class="section-header">
-            <h2>The Publications</h2>
-            <p>Curated insights delivered directly to over 100k+ collective followers.</p>
+    <div class="brand-grid">
+        <div class="brand-card">
+            <span class="card-icon">⚔️</span>
+            <h3>Anime Shogun</h3>
+            <p>The definitive voice for power-scaling debates and character meta-analysis. Where fandom meets high-stakes discussion.</p>
         </div>
-        <div class="grid">
-            <div class="card">
-                <span class="badge badge-news">Tech & Automation</span>
-                <h3>AI Daily Pulse</h3>
-                <p>Tracking the rapid evolution of agentic frameworks and automation tools.</p>
-                <a href="#" class="btn">Read Latest</a>
-            </div>
-            <div class="card">
-                <span class="badge badge-news">Finance</span>
-                <h3>Crypto Daily</h3>
-                <p>Daily market sentiment and deep dives into the digital economy.</p>
-                <a href="#" class="btn">Read Latest</a>
-            </div>
-            <div class="card">
-                <span class="badge badge-news">Culture</span>
-                <h3>Anime & Comics Highlights</h3>
-                <p>Weekly updates on the Grand Line, Elbaf, and the world of manga.</p>
-                <a href="#" class="btn">Read Latest</a>
-            </div>
-        </div>
-    </section>
 
-    <section id="communities" style="background-color: #f1f5f9;">
-        <div class="container">
-            <div class="section-header">
-                <h2>Managed Communities</h2>
-                <p>Engaging digital brands across the Anime and Pet niches.</p>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <span class="badge badge-comm">Facebook</span>
-                    <h3>Anime Shogun</h3>
-                    <p>Focusing on character vs. character power-scaling and community debates.</p>
-                </div>
-                <div class="card">
-                    <span class="badge badge-comm">Facebook</span>
-                    <h3>Brosekai / Grand Line Gazette</h3>
-                    <p>News hub for the One Piece community and beyond.</p>
-                </div>
-                <div class="card">
-                    <span class="badge badge-comm">Facebook</span>
-                    <h3>Pets Central / Pet Parents</h3>
-                    <p>Connecting pet owners through real stories and community resources.</p>
-                </div>
-            </div>
+        <div class="brand-card">
+            <span class="card-icon">🏴‍☠️</span>
+            <h3>Grand Line Gazette</h3>
+            <p>Your weekly dispatch for everything One Piece. On-the-ground reporting from the Elbaf arc and beyond.</p>
         </div>
-    </section>
 
-    <section id="lab" class="lab-section">
-        <div class="container lab-content">
-            <div class="lab-text">
-                <h2>The Lab</h2>
-                <p style="margin-top: 20px; color: #aaa;">This is where the strategy meets the machine. We build custom, AI-powered content pipelines that handle the heavy lifting of research, formatting, and distribution.</p>
-                <div class="tag-cloud">
-                    <span class="tag">Python</span>
-                    <span class="tag">PydanticAI</span>
-                    <span class="tag">Browser-Use</span>
-                    <span class="tag">Automated Pipelines</span>
-                </div>
+        <div class="brand-card">
+            <span class="card-icon">🐾</span>
+            <h3>Pets Central</h3>
+            <p>A global community celebrating the stories of real pets. Authentic, heartwarming, and deeply visual.</p>
+        </div>
+
+        <div class="brand-card">
+            <span class="card-icon">❤️</span>
+            <h3>Pet Parents</h3>
+            <p>The human side of the pet world. Curating advice, lifestyles, and the bonds that define home.</p>
+        </div>
+
+        <div class="brand-card">
+            <span class="card-icon">🌀</span>
+            <h3>Brosekai</h3>
+            <p>Diving deep into the Isekai genre and alternative manga culture through a modern, curated lens.</p>
+        </div>
+
+        <div class="brand-card">
+            <span class="card-icon">📜</span>
+            <h3>The Archive</h3>
+            <p>Long-form storytelling and historical deep-dives into the evolution of digital and comic culture.</p>
+        </div>
+    </div>
+
+    <section class="engine-section">
+        <div class="engine-content">
+            <h2>The Growth Engine</h2>
+            <p>We move fast, but we focus on what's real. Our approach balances data-driven insights with manual curation to ensure every post resonates with the core audience.</p>
+            <ul class="method-list">
+                <li>Bespoke Community Management</li>
+                <li>Niche-Specific Trend Analysis</li>
+                <li>High-Velocity Content Pipelines</li>
+                <li>Strategic Multi-Platform Synergy</li>
+            </ul>
+        </div>
+        
+        <div class="newsletter-box">
+            <h4>Direct Curations</h4>
+            <div class="n-item">
+                <strong>Tech Pulse</strong>
+                <p style="font-size: 14px; opacity: 0.9;">The latest in digital innovation and tooling.</p>
             </div>
-            <div class="lab-visual" style="flex: 1; text-align: center;">
-                <div style="border: 2px dashed #444; padding: 40px; border-radius: 20px; color: #666;">
-                    SYSTEM_ARCH_PIPELINE.EXE
-                </div>
+            <div class="n-item">
+                <strong>Market Sentiment</strong>
+                <p style="font-size: 14px; opacity: 0.9;">Daily insights into the digital finance landscape.</p>
+            </div>
+            <div class="n-item">
+                <strong>The Weekly Meta</strong>
+                <p style="font-size: 14px; opacity: 0.9;">Anime and comics highlights you can't miss.</p>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 ClaytonStrategy. All rights reserved.</p>
-        </div>
+    <footer style="text-align: center; padding: 40px 0; color: #94a3b8; font-size: 14px;">
+        <p>&copy; 2026 ClaytonStrategy. Built for the community, by the community.</p>
     </footer>
+</div>
+
 </body>
 </html>
