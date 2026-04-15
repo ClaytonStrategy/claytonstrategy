@@ -25,7 +25,7 @@
             font-family: 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            background: linear-gradient(135deg, #fef4f0 0%, #f8e8ff 50%, #fff5f0 100%);
             background-attachment: fixed;
         }
         
@@ -36,15 +36,15 @@
         }
         
         header {
-            background: rgba(15, 12, 41, 0.95);
+            background: linear-gradient(135deg, #fff9f5 0%, #fef0ff 100%);
             backdrop-filter: blur(10px);
-            color: white;
+            color: #333;
             padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
-            border-bottom: 2px solid rgba(255, 107, 53, 0.3);
+            box-shadow: 0 2px 20px rgba(255, 140, 107, 0.15);
+            border-bottom: 2px solid #ffb399;
         }
         
         .header-content {
@@ -56,7 +56,7 @@
         .logo img {
             max-height: 80px;
             width: auto;
-            filter: drop-shadow(0 0 10px rgba(255, 107, 53, 0.5));
+            filter: drop-shadow(0 0 10px rgba(255, 136, 102, 0.3));
         }
         
         nav ul {
@@ -69,7 +69,7 @@
         }
         
         nav ul li a {
-            color: #ff6b35;
+            color: #ff8866;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
@@ -77,8 +77,8 @@
         }
         
         nav ul li a:hover {
-            color: #ffb347;
-            text-shadow: 0 0 10px rgba(255, 107, 53, 0.6);
+            color: #cc6644;
+            text-shadow: 0 0 10px rgba(255, 136, 102, 0.3);
         }
 
         nav ul li a::after {
@@ -88,7 +88,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #ff6b35;
+            background: #ff8866;
             transition: width 0.3s ease;
         }
 
@@ -97,9 +97,9 @@
         }
         
         .hero {
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(48, 43, 99, 0.3) 100%);
+            background: linear-gradient(135deg, #ffe5d9 0%, #f3d9ff 100%);
             padding: 100px 0;
-            color: white;
+            color: #333;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -112,7 +112,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,107,53,0.1)"/></svg>') repeat;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,136,102,0.1)"/></svg>') repeat;
             opacity: 0.3;
             animation: float 20s infinite linear;
         }
@@ -133,7 +133,7 @@
             font-size: 52px;
             margin-bottom: 20px;
             line-height: 1.2;
-            background: linear-gradient(135deg, #ff6b35 0%, #ffb347 100%);
+            background: linear-gradient(135deg, #ff8866 0%, #cc6644 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -141,26 +141,27 @@
         }
 
         @keyframes glow-text {
-            0%, 100% { filter: drop-shadow(0 0 20px rgba(255, 107, 53, 0.5)); }
-            50% { filter: drop-shadow(0 0 40px rgba(255, 107, 53, 0.8)); }
+            0%, 100% { filter: drop-shadow(0 0 10px rgba(255, 136, 102, 0.3)); }
+            50% { filter: drop-shadow(0 0 20px rgba(255, 136, 102, 0.5)); }
         }
         
         .hero .subtitle {
             font-size: 22px;
             margin-bottom: 15px;
-            color: #ffb347;
+            color: #b388cc;
             font-weight: 600;
         }
         
         .hero p {
             font-size: 20px;
             margin-bottom: 35px;
-            opacity: 0.95;
+            opacity: 0.9;
+            color: #555;
         }
 
         .stats-bar {
-            background: rgba(255, 107, 53, 0.1);
-            border: 1px solid rgba(255, 107, 53, 0.3);
+            background: rgba(255, 255, 255, 0.6);
+            border: 2px solid #ffccbb;
             border-radius: 15px;
             padding: 30px;
             margin: 40px 0;
@@ -168,6 +169,7 @@
             justify-content: space-around;
             flex-wrap: wrap;
             gap: 20px;
+            box-shadow: 0 5px 20px rgba(255, 136, 102, 0.1);
         }
 
         .stat-item {
@@ -177,21 +179,20 @@
         .stat-number {
             font-size: 36px;
             font-weight: bold;
-            color: #ff6b35;
+            color: #ff8866;
             display: block;
         }
 
         .stat-label {
             font-size: 14px;
-            color: #ffb347;
+            color: #b388cc;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
         
         .newsletters {
             padding: 80px 0;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.5);
         }
         
         .section-header {
@@ -201,13 +202,13 @@
         
         .section-header h2 {
             font-size: 42px;
-            color: white;
+            color: #333;
             margin-bottom: 15px;
-            text-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+            text-shadow: 0 0 20px rgba(255, 136, 102, 0.2);
         }
         
         .section-header p {
-            color: #ffb347;
+            color: #b388cc;
             font-size: 18px;
             max-width: 700px;
             margin: 0 auto;
@@ -221,13 +222,14 @@
         }
         
         .newsletter-card {
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.15) 0%, rgba(48, 43, 99, 0.25) 100%);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 240, 255, 0.9) 100%);
             border-radius: 15px;
             padding: 35px;
             transition: all 0.3s ease;
-            border: 2px solid rgba(255, 107, 53, 0.3);
+            border: 2px solid #ffccbb;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 5px 15px rgba(255, 136, 102, 0.1);
         }
 
         .newsletter-card::before {
@@ -237,7 +239,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 107, 53, 0.1), transparent);
+            background: linear-gradient(45deg, transparent, rgba(255, 136, 102, 0.1), transparent);
             transform: rotate(45deg);
             transition: all 0.5s ease;
         }
@@ -248,8 +250,8 @@
         
         .newsletter-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.3);
-            border-color: #ff6b35;
+            box-shadow: 0 15px 40px rgba(255, 136, 102, 0.2);
+            border-color: #ff8866;
         }
         
         .newsletter-icon {
@@ -259,20 +261,20 @@
         }
         
         .newsletter-card h3 {
-            color: #ff6b35;
+            color: #ff8866;
             margin-bottom: 15px;
             font-size: 24px;
         }
         
         .newsletter-card p {
-            color: rgba(255, 255, 255, 0.8);
+            color: #666;
             margin-bottom: 20px;
             line-height: 1.7;
         }
         
         .newsletter-cta {
             display: inline-block;
-            background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+            background: linear-gradient(135deg, #ff8866 0%, #ffaa99 100%);
             color: white;
             padding: 12px 25px;
             border-radius: 25px;
@@ -281,16 +283,17 @@
             transition: all 0.3s ease;
             position: relative;
             z-index: 2;
+            box-shadow: 0 4px 15px rgba(255, 136, 102, 0.2);
         }
 
         .newsletter-cta:hover {
             transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.5);
+            box-shadow: 0 6px 25px rgba(255, 136, 102, 0.3);
         }
 
         .social-pages {
             padding: 80px 0;
-            background: rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, #fff5f2 0%, #f5f0ff 100%);
         }
 
         .social-grid {
@@ -300,18 +303,19 @@
         }
 
         .social-card {
-            background: linear-gradient(135deg, rgba(48, 43, 99, 0.3) 0%, rgba(15, 12, 41, 0.5) 100%);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(243, 217, 255, 0.5) 100%);
             border-radius: 12px;
             padding: 30px;
             text-align: center;
             transition: all 0.3s ease;
-            border: 2px solid rgba(255, 179, 71, 0.2);
+            border: 2px solid #e5ccff;
+            box-shadow: 0 4px 12px rgba(179, 136, 204, 0.1);
         }
 
         .social-card:hover {
             transform: translateY(-5px);
-            border-color: #ffb347;
-            box-shadow: 0 10px 30px rgba(255, 179, 71, 0.2);
+            border-color: #b388cc;
+            box-shadow: 0 10px 30px rgba(179, 136, 204, 0.2);
         }
 
         .social-icon {
@@ -321,32 +325,32 @@
         }
 
         .social-card h4 {
-            color: #ffb347;
+            color: #b388cc;
             margin-bottom: 10px;
             font-size: 20px;
         }
 
         .social-card p {
-            color: rgba(255, 255, 255, 0.7);
+            color: #666;
             font-size: 14px;
             margin-bottom: 15px;
         }
 
         .social-link {
             display: inline-block;
-            color: #ff6b35;
+            color: #ff8866;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
         }
 
         .social-link:hover {
-            color: #ffb347;
+            color: #cc6644;
         }
 
         .about {
             padding: 80px 0;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.5);
         }
         
         .about-content {
@@ -358,32 +362,33 @@
         
         .about-text h2 {
             font-size: 38px;
-            color: white;
+            color: #333;
             margin-bottom: 25px;
-            text-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+            text-shadow: 0 0 20px rgba(255, 136, 102, 0.2);
         }
         
         .about-text p {
             margin-bottom: 20px;
-            color: rgba(255, 255, 255, 0.85);
+            color: #555;
             font-size: 17px;
             line-height: 1.8;
         }
         
         .about-text strong {
-            color: #ff6b35;
+            color: #ff8866;
         }
         
         .credentials {
-            background: rgba(255, 107, 53, 0.1);
-            border: 1px solid rgba(255, 107, 53, 0.3);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 240, 255, 0.6) 100%);
+            border: 2px solid #ffccbb;
             padding: 25px;
             border-radius: 12px;
             margin-top: 30px;
+            box-shadow: 0 4px 12px rgba(255, 136, 102, 0.1);
         }
         
         .credentials h4 {
-            color: #ff6b35;
+            color: #ff8866;
             margin-bottom: 15px;
         }
         
@@ -393,19 +398,19 @@
         
         .credentials li {
             padding: 8px 0;
-            color: rgba(255, 255, 255, 0.8);
+            color: #666;
         }
         
         .credentials li:before {
             content: "✓ ";
-            color: #ff6b35;
+            color: #ff8866;
             font-weight: bold;
             margin-right: 10px;
         }
 
         .contact {
             padding: 80px 0;
-            background: rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, #fff5f2 0%, #f5f0ff 100%);
         }
         
         .contact-grid {
@@ -416,14 +421,15 @@
         }
         
         .contact-info {
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(48, 43, 99, 0.2) 100%);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 240, 255, 0.7) 100%);
             padding: 40px;
             border-radius: 15px;
-            border: 2px solid rgba(255, 107, 53, 0.3);
+            border: 2px solid #ffccbb;
+            box-shadow: 0 5px 20px rgba(255, 136, 102, 0.1);
         }
         
         .contact-info h3 {
-            color: #ff6b35;
+            color: #ff8866;
             margin-bottom: 25px;
             font-size: 28px;
         }
@@ -436,30 +442,31 @@
         
         .contact-method-icon {
             font-size: 24px;
-            color: #ff6b35;
+            color: #ff8866;
             margin-right: 15px;
             min-width: 30px;
         }
         
         .contact-method h4 {
-            color: #ffb347;
+            color: #b388cc;
             margin-bottom: 5px;
             font-size: 18px;
         }
         
         .contact-method p {
-            color: rgba(255, 255, 255, 0.8);
+            color: #666;
         }
 
         .contact-form {
-            background: linear-gradient(135deg, rgba(48, 43, 99, 0.3) 0%, rgba(15, 12, 41, 0.5) 100%);
+            background: linear-gradient(135deg, rgba(243, 217, 255, 0.5) 0%, rgba(255, 255, 255, 0.9) 100%);
             padding: 40px;
             border-radius: 15px;
-            border: 2px solid rgba(255, 107, 53, 0.3);
+            border: 2px solid #e5ccff;
+            box-shadow: 0 5px 20px rgba(179, 136, 204, 0.1);
         }
         
         .contact-form h3 {
-            color: #ff6b35;
+            color: #b388cc;
             margin-bottom: 25px;
             font-size: 24px;
         }
@@ -471,7 +478,7 @@
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            color: #ffb347;
+            color: #666;
             font-weight: 600;
         }
         
@@ -480,9 +487,9 @@
         .form-group textarea {
             width: 100%;
             padding: 12px;
-            border: 2px solid rgba(255, 107, 53, 0.3);
-            background: rgba(255, 255, 255, 0.05);
-            color: white;
+            border: 2px solid #e5ccff;
+            background: white;
+            color: #333;
             border-radius: 8px;
             font-size: 16px;
             transition: all 0.3s ease;
@@ -492,8 +499,8 @@
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #ff6b35;
-            background: rgba(255, 255, 255, 0.1);
+            border-color: #b388cc;
+            box-shadow: 0 0 0 3px rgba(179, 136, 204, 0.1);
         }
         
         .form-group textarea {
@@ -503,7 +510,7 @@
 
         .btn {
             display: inline-block;
-            background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+            background: linear-gradient(135deg, #ff8866 0%, #ffaa99 100%);
             color: white;
             padding: 15px 35px;
             border-radius: 30px;
@@ -513,19 +520,19 @@
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.3);
+            box-shadow: 0 5px 20px rgba(255, 136, 102, 0.2);
         }
         
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(255, 107, 53, 0.5);
+            box-shadow: 0 8px 30px rgba(255, 136, 102, 0.3);
         }
 
         footer {
-            background: rgba(15, 12, 41, 0.95);
-            color: white;
+            background: linear-gradient(135deg, #fff9f5 0%, #fef0ff 100%);
+            color: #333;
             padding: 40px 0;
-            border-top: 2px solid rgba(255, 107, 53, 0.3);
+            border-top: 2px solid #ffb399;
         }
         
         .footer-content {
@@ -536,14 +543,14 @@
         }
         
         .footer-links a {
-            color: #ffb347;
+            color: #b388cc;
             margin-left: 25px;
             text-decoration: none;
             transition: color 0.3s ease;
         }
         
         .footer-links a:hover {
-            color: #ff6b35;
+            color: #ff8866;
         }
         
         @media (max-width: 768px) {
@@ -615,13 +622,13 @@
     <section class="hero">
         <div class="container hero-content">
             <p class="subtitle">Multi-Platform Content Network</p>
-            <h1>Building a Social Media Empire</h1>
-            <p>Three newsletters. Six Facebook pages. One vision: deliver engaging content across AI, crypto, anime, pets, and pop culture.</p>
+            <h1>Social Media Strategies</h1>
+            <p>Three daily newsletters. Six Facebook pages. One vision: deliver engaging content across AI, crypto, anime, pets, and more.</p>
             
             <div class="stats-bar">
                 <div class="stat-item">
                     <span class="stat-number">3</span>
-                    <span class="stat-label">Newsletters</span>
+                    <span class="stat-label">Daily Newsletters</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">6</span>
@@ -638,26 +645,26 @@
     <section id="newsletters" class="newsletters">
         <div class="container">
             <div class="section-header">
-                <h2>Newsletters on Beehiiv</h2>
-                <p> Insights delivered to your inbox every morning</p>
+                <h2>Daily Newsletters on Beehiiv</h2>
+                <p>Curated insights delivered to your inbox every morning</p>
             </div>
             <div class="newsletter-grid">
                 <div class="newsletter-card">
                     <span class="newsletter-icon">🤖</span>
                     <h3>AI Daily Pulse</h3>
-                    <p>Your daily dose of AI news, breakthroughs, and applications. Stay ahead of the curve with the latest in artificial intelligence.</p>
+                    <p>Your dose of AI news, breakthroughs, and practical applications. Stay ahead of the curve with the latest in artificial intelligence.</p>
                     <a href="https://ai-daily-pulse.beehiiv.com/" class="newsletter-cta" target="_blank">Subscribe Now →</a>
                 </div>
                 <div class="newsletter-card">
                     <span class="newsletter-icon">₿</span>
                     <h3>Crypto Daily</h3>
-                    <p>Navigate crypto markets with confidence. Analysis, market trends, and insights on tokens.</p>
+                    <p>Navigate the crypto markets with confidence. Analysis, market trends, and insights on Bitcoin, Ethereum, and tokens.</p>
                     <a href="https://crypto-daily-ca877c.beehiiv.com/" class="newsletter-cta" target="_blank">Subscribe Now →</a>
                 </div>
                 <div class="newsletter-card">
                     <span class="newsletter-icon">⚡</span>
                     <h3>Anime & Comics Highlights</h3>
-                    <p>The best of anime, manga, and comics in one place. Breakdowns, reviews, and the stories you can't miss.</p>
+                    <p>The best of anime, manga, and comics in one place. Episode breakdowns, reviews, and stories you can't miss.</p>
                     <a href="https://anime-highlights.beehiiv.com/" class="newsletter-cta" target="_blank">Subscribe Now →</a>
                 </div>
             </div>
@@ -714,10 +721,10 @@
     <section id="about" class="about">
         <div class="container about-content">
             <div class="about-text">
-                <h2>Building Communities Through Content</h2>
-                <p><strong>Content connecting</strong> We create and manage multiple content channels across newsletters and social media, delivering daily value to thousands of engaged readers and followers.</p>
-                <p><strong>Multi-platform expertise</strong> From AI and crypto to anime and pets, we've built a diverse portfolio of content brands that resonate with specific audiences and drive meaningful engagement.</p>
-                <p><strong>Proven strategy</strong> Our streamlined approach to content creation, curation, and distribution allows managing multiple properties while maintaining quality and consistency across platforms.</p>
+                <h2>Communities Through Content</h2>
+                <p><strong>Content that connects.</strong> We create and manage multiple content channels across newsletters and social media, delivering daily value to thousands of engaged readers and followers.</p>
+                <p><strong>Multi-platform expertise.</strong> From AI and crypto to anime and pets, we've built a diverse portfolio of content brands that resonate with specific audiences and drive meaningful engagement.</p>
+                <p><strong>Proven systems.</strong> Our streamlined approach to content creation, curation, and distribution allows us to manage multiple properties while maintaining quality and consistency across all platforms.</p>
                 
                 <div class="credentials">
                     <h4>Content & Strategy Background</h4>
@@ -726,12 +733,12 @@
                         <li>CAPM (Certified Associate in Project Management)</li>
                         <li>Microsoft Certified Professional</li>
                         <li>10+ years in operations and digital strategy</li>
-                        <li>Multi-platform content expertise</li>
+                        <li>Multi-platform content management expertise</li>
                     </ul>
                 </div>
             </div>
             <div class="about-image">
-                <img src="ClaytonStrategyLogo.png" alt="Clayton Strategy" style="width: 100%; border-radius: 15px; filter: drop-shadow(0 0 20px rgba(255, 107, 53, 0.3));">
+                <img src="ClaytonStrategyLogo.png" alt="Clayton Strategy" style="width: 100%; border-radius: 15px; filter: drop-shadow(0 0 20px rgba(255, 136, 102, 0.2));">
             </div>
         </div>
     </section>
@@ -740,7 +747,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>Let's Connect</h2>
-                <p>Interested in collaboration, partnerships, or content strategy?</p>
+                <p>Interested in collaboration, partnerships, or content strategy consulting?</p>
             </div>
             <div class="contact-grid">
                 <div class="contact-info">
@@ -762,9 +769,9 @@
                         </div>
                     </div>
 
-                    <div style="margin-top: 40px; padding: 25px; background: rgba(255, 107, 53, 0.1); border-radius: 10px; border: 1px solid rgba(255, 107, 53, 0.3);">
-                        <h4 style="color: #ff6b35; margin-bottom: 15px;">Partnership Opportunities</h4>
-                        <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.7;">Looking to collaborate on content, cross-promotion, or strategic partnerships across our network? Reach out to discuss how we can work together.</p>
+                    <div style="margin-top: 40px; padding: 25px; background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 240, 255, 0.6) 100%); border-radius: 10px; border: 2px solid #ffccbb;">
+                        <h4 style="color: #ff8866; margin-bottom: 15px;">Partnership Opportunities</h4>
+                        <p style="color: #666; line-height: 1.7;">Looking to collaborate on content, cross-promotion, or strategic partnerships across our network? Reach out to discuss how we can work together.</p>
                     </div>
                 </div>
                 <div class="contact-form">
