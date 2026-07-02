@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-75H67SDSH7"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -15,91 +14,61 @@
     <title>ClaytonStrategy - Multi-Platform Content Empire</title>
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #fef4f0 0%, #f8e8ff 50%, #fff5f0 100%);
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #fde8dc 0%, #ecdcf7 50%, #fde8dc 100%);
             background-attachment: fixed;
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* ── HEADER ── */
         header {
-            background: linear-gradient(135deg, #fff9f5 0%, #fef0ff 100%);
-            backdrop-filter: blur(10px);
-            color: #333;
-            padding: 20px 0;
+            background: linear-gradient(135deg, #c0392b 0%, #7d3c98 100%);
+            padding: 18px 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 20px rgba(255, 140, 107, 0.15);
-            border-bottom: 2px solid #ffb399;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+            border-bottom: 2px solid #ff6b4a;
         }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
+
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+
         .logo img {
             max-height: 80px;
             width: auto;
-            filter: drop-shadow(0 0 10px rgba(255, 136, 102, 0.3));
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
         }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 30px;
-        }
-        
+
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 30px; }
         nav ul li a {
-            color: #ff8866;
+            color: #ffe8e0;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
             position: relative;
         }
-        
-        nav ul li a:hover {
-            color: #cc6644;
-            text-shadow: 0 0 10px rgba(255, 136, 102, 0.3);
-        }
-
+        nav ul li a:hover { color: #fff; }
         nav ul li a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #ff8866;
+            bottom: -5px; left: 0;
+            width: 0; height: 2px;
+            background: #fff;
             transition: width 0.3s ease;
         }
+        nav ul li a:hover::after { width: 100%; }
 
-        nav ul li a:hover::after {
-            width: 100%;
-        }
-        
+        /* ── HERO ── */
         .hero {
-            background: linear-gradient(135deg, #ffe5d9 0%, #f3d9ff 100%);
-            padding: 100px 0;
-            color: #333;
+            background: linear-gradient(135deg, #c0392b 0%, #8e44ad 100%);
+            padding: 70px 0 60px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -108,498 +77,353 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,136,102,0.1)"/></svg>') repeat;
-            opacity: 0.3;
-            animation: float 20s infinite linear;
+            inset: 0;
+            background: radial-gradient(ellipse at 25% 60%, rgba(255,255,255,0.08) 0%, transparent 55%),
+                        radial-gradient(ellipse at 75% 40%, rgba(255,255,255,0.06) 0%, transparent 55%);
+            pointer-events: none;
         }
 
-        @keyframes float {
-            from { transform: translateY(0); }
-            to { transform: translateY(-100px); }
-        }
-        
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero h1 {
-            font-size: 52px;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            background: linear-gradient(135deg, #ff8866 0%, #cc6644 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: glow-text 3s ease-in-out infinite;
-        }
+        .hero-content { max-width: 860px; margin: 0 auto; position: relative; z-index: 2; }
 
-        @keyframes glow-text {
-            0%, 100% { filter: drop-shadow(0 0 10px rgba(255, 136, 102, 0.3)); }
-            50% { filter: drop-shadow(0 0 20px rgba(255, 136, 102, 0.5)); }
-        }
-        
-        .hero .subtitle {
-            font-size: 22px;
-            margin-bottom: 15px;
-            color: #b388cc;
-            font-weight: 600;
-        }
-        
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 35px;
-            opacity: 0.9;
-            color: #555;
-        }
-
-        .stats-bar {
-            background: rgba(255, 255, 255, 0.6);
-            border: 2px solid #ffccbb;
-            border-radius: 15px;
-            padding: 30px;
-            margin: 40px 0;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
-            box-shadow: 0 5px 20px rgba(255, 136, 102, 0.1);
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 36px;
-            font-weight: bold;
-            color: #ff8866;
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 14px;
-            color: #b388cc;
+        .hero-eyebrow {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 14px;
         }
-        
-        .newsletters {
-            padding: 80px 0;
-            background: rgba(255, 255, 255, 0.5);
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 14px;
+            line-height: 1.15;
+            color: #fff;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.2);
         }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-header h2 {
-            font-size: 42px;
-            color: #333;
-            margin-bottom: 15px;
-            text-shadow: 0 0 20px rgba(255, 136, 102, 0.2);
-        }
-        
-        .section-header p {
-            color: #b388cc;
+
+        .hero-sub {
             font-size: 18px;
-            max-width: 700px;
-            margin: 0 auto;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 28px;
         }
-        
+
+        /* ── SLIM STATS BANNER ── */
+        .stats-banner {
+            display: inline-flex;
+            gap: 0;
+            background: rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 40px;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .stats-banner .stat {
+            padding: 8px 24px;
+            font-size: 13px;
+            color: rgba(255,255,255,0.9);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .stats-banner .stat span {
+            color: #ffccbb;
+            font-weight: 800;
+            margin-right: 5px;
+        }
+
+        .stats-banner .divider {
+            width: 1px;
+            background: rgba(255,255,255,0.2);
+            align-self: stretch;
+        }
+
+        /* ── HERO PAGE CARDS ── */
+        .hero-pages-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 16px;
+        }
+
+        .hero-pages {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .hero-page-chip {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.25s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-page-chip:hover {
+            background: rgba(255,255,255,0.28);
+            border-color: rgba(255,255,255,0.6);
+            transform: translateY(-2px);
+        }
+
+        .hero-page-chip .chip-icon { font-size: 16px; }
+
+        /* ── SECTION SHARED ── */
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 38px; color: #2a0d18; margin-bottom: 10px; }
+        .section-header p { color: #7a3060; font-size: 17px; max-width: 680px; margin: 0 auto; }
+
+        /* ── NEWSLETTERS ── */
+        .newsletters { padding: 75px 0; background: rgba(255,255,255,0.45); }
+
         .newsletter-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 26px;
         }
-        
+
         .newsletter-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 240, 255, 0.9) 100%);
-            border-radius: 15px;
-            padding: 35px;
-            transition: all 0.3s ease;
-            border: 2px solid #ffccbb;
+            border-radius: 16px;
+            padding: 34px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(255, 136, 102, 0.1);
+            box-shadow: 0 6px 22px rgba(0,0,0,0.18);
+            color: #fff;
         }
 
-        .newsletter-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 136, 102, 0.1), transparent);
-            transform: rotate(45deg);
-            transition: all 0.5s ease;
-        }
+        .newsletter-card:nth-child(1) { background: linear-gradient(145deg, #c0392b 0%, #e74c3c 100%); }
+        .newsletter-card:nth-child(2) { background: linear-gradient(145deg, #d35400 0%, #e67e22 100%); }
+        .newsletter-card:nth-child(3) { background: linear-gradient(145deg, #1a5276 0%, #2980b9 100%); }
 
-        .newsletter-card:hover::before {
-            left: 100%;
-        }
-        
         .newsletter-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(255, 136, 102, 0.2);
-            border-color: #ff8866;
+            transform: translateY(-7px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.25);
         }
-        
-        .newsletter-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-            display: block;
-        }
-        
-        .newsletter-card h3 {
-            color: #ff8866;
-            margin-bottom: 15px;
-            font-size: 24px;
-        }
-        
-        .newsletter-card p {
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.7;
-        }
-        
+
+        .newsletter-icon { font-size: 44px; margin-bottom: 16px; display: block; }
+        .newsletter-card h3 { color: #fff; margin-bottom: 12px; font-size: 22px; text-shadow: 0 1px 6px rgba(0,0,0,0.2); }
+        .newsletter-card p { color: rgba(255,255,255,0.88); margin-bottom: 22px; line-height: 1.7; font-size: 15px; }
+
         .newsletter-cta {
             display: inline-block;
-            background: linear-gradient(135deg, #ff8866 0%, #ffaa99 100%);
-            color: white;
-            padding: 12px 25px;
+            background: rgba(255,255,255,0.22);
+            border: 2px solid rgba(255,255,255,0.5);
+            color: #fff;
+            padding: 10px 22px;
             border-radius: 25px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 14px;
             transition: all 0.3s ease;
-            position: relative;
-            z-index: 2;
-            box-shadow: 0 4px 15px rgba(255, 136, 102, 0.2);
         }
 
         .newsletter-cta:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 25px rgba(255, 136, 102, 0.3);
+            background: rgba(255,255,255,0.38);
+            border-color: #fff;
         }
 
+        /* ── SOCIAL PAGES ── */
         .social-pages {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #fff5f2 0%, #f5f0ff 100%);
+            padding: 75px 0;
+            background: linear-gradient(135deg, #fde8dc 0%, #ecdcf7 100%);
         }
 
         .social-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            gap: 20px;
         }
 
         .social-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(243, 217, 255, 0.5) 100%);
-            border-radius: 12px;
-            padding: 30px;
+            border-radius: 14px;
+            padding: 28px;
             text-align: center;
-            transition: all 0.3s ease;
-            border: 2px solid #e5ccff;
-            box-shadow: 0 4px 12px rgba(179, 136, 204, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            color: #fff;
         }
+
+        /* Each card gets its own vibrant color */
+        .social-card:nth-child(1) { background: linear-gradient(145deg, #c0392b 0%, #e74c3c 100%); }
+        .social-card:nth-child(2) { background: linear-gradient(145deg, #7d3c98 0%, #9b59b6 100%); }
+        .social-card:nth-child(3) { background: linear-gradient(145deg, #1a5276 0%, #2471a3 100%); }
+        .social-card:nth-child(4) { background: linear-gradient(145deg, #1e8449 0%, #27ae60 100%); }
+        .social-card:nth-child(5) { background: linear-gradient(145deg, #b7770d 0%, #d4ac0d 100%); }
+        .social-card:nth-child(6) { background: linear-gradient(145deg, #d35400 0%, #e67e22 100%); }
 
         .social-card:hover {
             transform: translateY(-5px);
-            border-color: #b388cc;
-            box-shadow: 0 10px 30px rgba(179, 136, 204, 0.2);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.22);
         }
 
-        .social-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .social-card h4 {
-            color: #b388cc;
-            margin-bottom: 10px;
-            font-size: 20px;
-        }
-
-        .social-card p {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
+        .social-icon { font-size: 36px; margin-bottom: 12px; display: block; }
+        .social-card h4 { color: #fff; margin-bottom: 7px; font-size: 18px; font-weight: 700; text-shadow: 0 1px 4px rgba(0,0,0,0.2); }
+        .social-card p { color: rgba(255,255,255,0.85); font-size: 13px; margin-bottom: 14px; }
 
         .social-link {
             display: inline-block;
-            color: #ff8866;
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.5);
+            color: #fff;
             text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
+            font-weight: 700;
+            font-size: 13px;
+            padding: 6px 16px;
+            border-radius: 20px;
+            transition: all 0.25s ease;
         }
+        .social-link:hover { background: rgba(255,255,255,0.35); }
 
-        .social-link:hover {
-            color: #cc6644;
-        }
+        /* ── ABOUT ── */
+        .about { padding: 75px 0; background: rgba(255,255,255,0.45); }
 
-        .about {
-            padding: 80px 0;
-            background: rgba(255, 255, 255, 0.5);
-        }
-        
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: center;
         }
-        
-        .about-text h2 {
-            font-size: 38px;
-            color: #333;
-            margin-bottom: 25px;
-            text-shadow: 0 0 20px rgba(255, 136, 102, 0.2);
-        }
-        
-        .about-text p {
-            margin-bottom: 20px;
-            color: #555;
-            font-size: 17px;
-            line-height: 1.8;
-        }
-        
-        .about-text strong {
-            color: #ff8866;
-        }
-        
+
+        .about-text h2 { font-size: 36px; color: #2a0d18; margin-bottom: 20px; }
+        .about-text p { margin-bottom: 16px; color: #3a1a2a; font-size: 16px; line-height: 1.8; }
+        .about-text strong { color: #c0392b; }
+
         .credentials {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 240, 255, 0.6) 100%);
-            border: 2px solid #ffccbb;
-            padding: 25px;
+            background: linear-gradient(135deg, #c0392b 0%, #8e44ad 100%);
+            padding: 24px;
             border-radius: 12px;
-            margin-top: 30px;
-            box-shadow: 0 4px 12px rgba(255, 136, 102, 0.1);
-        }
-        
-        .credentials h4 {
-            color: #ff8866;
-            margin-bottom: 15px;
-        }
-        
-        .credentials ul {
-            list-style: none;
-        }
-        
-        .credentials li {
-            padding: 8px 0;
-            color: #666;
-        }
-        
-        .credentials li:before {
-            content: "✓ ";
-            color: #ff8866;
-            font-weight: bold;
-            margin-right: 10px;
+            margin-top: 26px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
         }
 
-        .contact {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #fff5f2 0%, #f5f0ff 100%);
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            margin-top: 50px;
-        }
-        
+        .credentials h4 { color: #ffe8e0; margin-bottom: 12px; font-size: 15px; font-weight: 700; }
+        .credentials ul { list-style: none; }
+        .credentials li { padding: 6px 0; color: rgba(255,255,255,0.88); font-size: 14px; }
+        .credentials li::before { content: "✓ "; color: #ffccbb; font-weight: bold; margin-right: 8px; }
+
+        /* ── CONTACT ── */
+        .contact { padding: 75px 0; background: linear-gradient(135deg, #fde8dc 0%, #ecdcf7 100%); }
+
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 45px; }
+
         .contact-info {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 240, 255, 0.7) 100%);
-            padding: 40px;
+            background: linear-gradient(135deg, #c0392b 0%, #8e44ad 100%);
+            padding: 36px;
             border-radius: 15px;
-            border: 2px solid #ffccbb;
-            box-shadow: 0 5px 20px rgba(255, 136, 102, 0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.18);
+            color: #fff;
         }
-        
-        .contact-info h3 {
-            color: #ff8866;
-            margin-bottom: 25px;
-            font-size: 28px;
+
+        .contact-info h3 { color: #ffe8e0; margin-bottom: 22px; font-size: 24px; }
+        .contact-method { display: flex; align-items: flex-start; margin-bottom: 22px; }
+        .contact-method-icon { font-size: 20px; margin-right: 13px; min-width: 26px; }
+        .contact-method h4 { color: #ffccbb; margin-bottom: 3px; font-size: 15px; }
+        .contact-method p { color: rgba(255,255,255,0.85); font-size: 14px; }
+
+        .partnership-box {
+            margin-top: 28px;
+            padding: 20px;
+            background: rgba(255,255,255,0.12);
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
         }
-        
-        .contact-method {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 25px;
-        }
-        
-        .contact-method-icon {
-            font-size: 24px;
-            color: #ff8866;
-            margin-right: 15px;
-            min-width: 30px;
-        }
-        
-        .contact-method h4 {
-            color: #b388cc;
-            margin-bottom: 5px;
-            font-size: 18px;
-        }
-        
-        .contact-method p {
-            color: #666;
-        }
+        .partnership-box h4 { color: #ffccbb; margin-bottom: 10px; font-size: 14px; font-weight: 700; }
+        .partnership-box p { color: rgba(255,255,255,0.85); line-height: 1.7; font-size: 14px; }
 
         .contact-form {
-            background: linear-gradient(135deg, rgba(243, 217, 255, 0.5) 0%, rgba(255, 255, 255, 0.9) 100%);
-            padding: 40px;
+            background: linear-gradient(135deg, #7d3c98 0%, #c0392b 100%);
+            padding: 36px;
             border-radius: 15px;
-            border: 2px solid #e5ccff;
-            box-shadow: 0 5px 20px rgba(179, 136, 204, 0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.18);
         }
-        
-        .contact-form h3 {
-            color: #b388cc;
-            margin-bottom: 25px;
-            font-size: 24px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #666;
-            font-weight: 600;
-        }
-        
+
+        .contact-form h3 { color: #ffe8e0; margin-bottom: 22px; font-size: 22px; }
+
+        .form-group { margin-bottom: 16px; }
+        .form-group label { display: block; margin-bottom: 6px; color: rgba(255,255,255,0.88); font-weight: 600; font-size: 13px; }
+
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 12px;
-            border: 2px solid #e5ccff;
-            background: white;
-            color: #333;
+            padding: 10px 13px;
+            border: 1px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.15);
+            color: #fff;
             border-radius: 8px;
-            font-size: 16px;
+            font-size: 15px;
             transition: all 0.3s ease;
         }
-        
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder { color: rgba(255,255,255,0.4); }
+        .form-group select option { background: #7d3c98; color: #fff; }
+
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #b388cc;
-            box-shadow: 0 0 0 3px rgba(179, 136, 204, 0.1);
+            border-color: rgba(255,255,255,0.7);
+            background: rgba(255,255,255,0.22);
         }
-        
-        .form-group textarea {
-            height: 120px;
-            resize: vertical;
-        }
+
+        .form-group textarea { height: 110px; resize: vertical; }
 
         .btn {
             display: inline-block;
-            background: linear-gradient(135deg, #ff8866 0%, #ffaa99 100%);
-            color: white;
-            padding: 15px 35px;
+            background: rgba(255,255,255,0.22);
+            border: 2px solid rgba(255,255,255,0.6);
+            color: #fff;
+            padding: 13px 32px;
             border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 18px;
+            font-weight: 700;
+            font-size: 16px;
             transition: all 0.3s ease;
-            border: none;
             cursor: pointer;
-            box-shadow: 0 5px 20px rgba(255, 136, 102, 0.2);
         }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(255, 136, 102, 0.3);
-        }
+        .btn:hover { background: rgba(255,255,255,0.36); border-color: #fff; transform: translateY(-2px); }
 
+        /* ── FOOTER ── */
         footer {
-            background: linear-gradient(135deg, #fff9f5 0%, #fef0ff 100%);
-            color: #333;
-            padding: 40px 0;
-            border-top: 2px solid #ffb399;
+            background: linear-gradient(135deg, #c0392b 0%, #7d3c98 100%);
+            color: rgba(255,255,255,0.8);
+            padding: 32px 0;
+            border-top: 2px solid rgba(255,255,255,0.2);
         }
-        
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        
-        .footer-links a {
-            color: #b388cc;
-            margin-left: 25px;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: #ff8866;
-        }
-        
+
+        .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .footer-content p { font-size: 14px; color: rgba(255,255,255,0.7); }
+        .footer-links a { color: rgba(255,255,255,0.8); margin-left: 20px; text-decoration: none; font-size: 14px; transition: color 0.3s; }
+        .footer-links a:hover { color: #fff; }
+
+        /* ── RESPONSIVE ── */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .hero .subtitle {
-                font-size: 18px;
-            }
-            
-            .about-content,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .newsletter-grid,
-            .social-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .header-content {
-                flex-direction: column;
-            }
-            
-            nav ul {
-                margin-top: 20px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            nav ul li {
-                margin: 5px 10px;
-            }
-
-            .stats-bar {
-                flex-direction: column;
-            }
+            .hero h1 { font-size: 32px; }
+            .stats-banner { flex-direction: column; border-radius: 14px; }
+            .stats-banner .divider { width: 100%; height: 1px; }
+            .about-content, .contact-grid { grid-template-columns: 1fr; }
+            .newsletter-grid, .social-grid { grid-template-columns: 1fr; }
+            .header-content { flex-direction: column; }
+            nav ul { margin-top: 14px; flex-wrap: wrap; justify-content: center; }
+            nav ul li { margin: 4px 8px; }
         }
 
-        /* Floating animation for cards */
-        @keyframes cardFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .newsletter-card:nth-child(1) { animation: cardFloat 6s ease-in-out infinite; }
-        .newsletter-card:nth-child(2) { animation: cardFloat 6s ease-in-out infinite 2s; }
-        .newsletter-card:nth-child(3) { animation: cardFloat 6s ease-in-out infinite 4s; }
+        /* ── SCROLL FADE ── */
+        .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body>
@@ -621,23 +445,40 @@
 
     <section class="hero">
         <div class="container hero-content">
-            <p class="subtitle">Multi-Platform Content Network</p>
+            <p class="hero-eyebrow">Multi-Platform Content Network</p>
             <h1>Social Media Strategies</h1>
-            <p>Three newsletters. Six Facebook pages. One vision: deliver engaging content across AI, crypto, anime, pets, and more.</p>
-            
-            <div class="stats-bar">
-                <div class="stat-item">
-                    <span class="stat-number">3</span>
-                    <span class="stat-label">Daily Newsletters</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">6</span>
-                    <span class="stat-label">Facebook Pages</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">∞</span>
-                    <span class="stat-label">Stories to Tell</span>
-                </div>
+            <p class="hero-sub">Three newsletters. Six Facebook pages. One vision: engaging content across AI, crypto, anime, pets, and more.</p>
+
+            <!-- Slim stats banner -->
+            <div class="stats-banner">
+                <div class="stat"><span>3</span> Weekly Newsletters</div>
+                <div class="divider"></div>
+                <div class="stat"><span>6</span> Facebook Pages</div>
+                <div class="divider"></div>
+                <div class="stat"><span>∞</span> Stories to Tell</div>
+            </div>
+
+            <!-- FB pages shown right in the hero -->
+            <p class="hero-pages-label">Follow our pages on Facebook</p>
+            <div class="hero-pages">
+                <a href="https://www.facebook.com/profile.php?id=61583673964423" class="hero-page-chip" target="_blank">
+                    <span class="chip-icon">⚔️</span> Brosekai
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61583745277503" class="hero-page-chip" target="_blank">
+                    <span class="chip-icon">🏯</span> Anime Shogun
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61586884830145" class="hero-page-chip" target="_blank">
+                    <span class="chip-icon">🌊</span> Grand Line Gazette
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61583695116359" class="hero-page-chip" target="_blank">
+                    <span class="chip-icon">📖</span> Manga Lord
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61574276562647" class="hero-page-chip" target="_blank">
+                    <span class="chip-icon">🐾</span> Pets Central
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61572079829666" class="hero-page-chip" target="_blank">
+                    <span class="chip-icon">🏠</span> Pet Parents
+                </a>
             </div>
         </div>
     </section>
@@ -649,22 +490,22 @@
                 <p>Insights delivered to your inbox every week</p>
             </div>
             <div class="newsletter-grid">
-                <div class="newsletter-card">
+                <div class="newsletter-card fade-up">
                     <span class="newsletter-icon">🤖</span>
-                    <h3>AI Daily Pulse</h3>
-                    <p>Your dose of AI news, breakthroughs, and practical applications. Stay ahead of the curve with the latest in artificial intelligence.</p>
+                    <h3>AI Weekly</h3>
+                    <p>Your weekly dose of AI news, breakthroughs, and practical applications. Stay ahead of the curve with the latest in artificial intelligence.</p>
                     <a href="https://ai-daily-pulse.beehiiv.com/" class="newsletter-cta" target="_blank">Subscribe Now →</a>
                 </div>
-                <div class="newsletter-card">
+                <div class="newsletter-card fade-up">
                     <span class="newsletter-icon">₿</span>
-                    <h3>Crypto Daily</h3>
-                    <p>Navigate the crypto markets with confidence. Analysis, market trends, and insights on Bitcoin, Ethereum, and tokens.</p>
+                    <h3>Crypto Weekly</h3>
+                    <p>Navigate the crypto markets with confidence. Weekly analysis, market trends, and insights on Bitcoin, Ethereum, and beyond.</p>
                     <a href="https://crypto-daily-ca877c.beehiiv.com/" class="newsletter-cta" target="_blank">Subscribe Now →</a>
                 </div>
-                <div class="newsletter-card">
-                    <span class="newsletter-icon">⚡</span>
-                    <h3>Anime & Comics Highlights</h3>
-                    <p>The best of anime, manga, and comics in one place. Episode breakdowns, reviews, and stories you can't miss.</p>
+                <div class="newsletter-card fade-up">
+                    <span class="newsletter-icon">🌊</span>
+                    <h3>Grand Line Gazette</h3>
+                    <p>The One Piece newsletter. Weekly episode breakdowns, manga chapters, lore deep-dives, and everything the Grand Line has to offer.</p>
                     <a href="https://anime-highlights.beehiiv.com/" class="newsletter-cta" target="_blank">Subscribe Now →</a>
                 </div>
             </div>
@@ -678,37 +519,37 @@
                 <p>Follow our growing network of communities</p>
             </div>
             <div class="social-grid">
-                <div class="social-card">
-                    <span class="social-icon">🎯</span>
+                <div class="social-card fade-up">
+                    <span class="social-icon">⚔️</span>
                     <h4>Brosekai</h4>
                     <p>Anime updates, reviews, and epic moments</p>
                     <a href="https://www.facebook.com/profile.php?id=61583673964423" class="social-link" target="_blank">Follow on Facebook →</a>
                 </div>
-                <div class="social-card">
-                    <span class="social-icon">⛵</span>
-                    <h4>Grand Line Gazette</h4>
-                    <p>One Piece news and community</p>
-                    <a href="https://www.facebook.com/profile.php?id=61586884830145" class="social-link" target="_blank">Follow on Facebook →</a>
-                </div>
-                <div class="social-card">
-                    <span class="social-icon">📚</span>
-                    <h4>Manga Lord</h4>
-                    <p>Manga reviews and recommendations</p>
-                    <a href="https://www.facebook.com/profile.php?id=61583695116359" class="social-link" target="_blank">Follow on Facebook →</a>
-                </div>
-                <div class="social-card">
-                    <span class="social-icon">⚔️</span>
+                <div class="social-card fade-up">
+                    <span class="social-icon">🏯</span>
                     <h4>Anime Shogun</h4>
                     <p>Anime culture and highlights</p>
                     <a href="https://www.facebook.com/profile.php?id=61583745277503" class="social-link" target="_blank">Follow on Facebook →</a>
                 </div>
-                <div class="social-card">
+                <div class="social-card fade-up">
+                    <span class="social-icon">🌊</span>
+                    <h4>Grand Line Gazette</h4>
+                    <p>One Piece news and community</p>
+                    <a href="https://www.facebook.com/profile.php?id=61586884830145" class="social-link" target="_blank">Follow on Facebook →</a>
+                </div>
+                <div class="social-card fade-up">
+                    <span class="social-icon">📖</span>
+                    <h4>Manga Lord</h4>
+                    <p>Manga reviews and recommendations</p>
+                    <a href="https://www.facebook.com/profile.php?id=61583695116359" class="social-link" target="_blank">Follow on Facebook →</a>
+                </div>
+                <div class="social-card fade-up">
                     <span class="social-icon">🐾</span>
                     <h4>Pets Central</h4>
                     <p>Everything pets and pet care</p>
                     <a href="https://www.facebook.com/profile.php?id=61574276562647" class="social-link" target="_blank">Follow on Facebook →</a>
                 </div>
-                <div class="social-card">
+                <div class="social-card fade-up">
                     <span class="social-icon">🏠</span>
                     <h4>Pet Parents</h4>
                     <p>Community for pet lovers</p>
@@ -722,10 +563,10 @@
         <div class="container about-content">
             <div class="about-text">
                 <h2>Communities Through Content</h2>
-                <p><strong>Content that connects.</strong> We create and manage multiple content channels across newsletters and social media, delivering daily value to thousands of engaged readers and followers.</p>
+                <p><strong>Content that connects.</strong> We create and manage multiple content channels across newsletters and social media, delivering weekly value to thousands of engaged readers and followers.</p>
                 <p><strong>Multi-platform expertise.</strong> From AI and crypto to anime and pets, we've built a diverse portfolio of content brands that resonate with specific audiences and drive meaningful engagement.</p>
                 <p><strong>Proven systems.</strong> Our streamlined approach to content creation, curation, and distribution allows us to manage multiple properties while maintaining quality and consistency across all platforms.</p>
-                
+
                 <div class="credentials">
                     <h4>Content & Strategy Background</h4>
                     <ul>
@@ -738,7 +579,7 @@
                 </div>
             </div>
             <div class="about-image">
-                <img src="ClaytonStrategyLogo.png" alt="Clayton Strategy" style="width: 100%; border-radius: 15px; filter: drop-shadow(0 0 20px rgba(255, 136, 102, 0.2));">
+                <img src="ClaytonStrategyLogo.png" alt="Clayton Strategy" style="width:100%;border-radius:15px;filter:drop-shadow(0 0 20px rgba(192,57,43,0.3));">
             </div>
         </div>
     </section>
@@ -752,7 +593,6 @@
             <div class="contact-grid">
                 <div class="contact-info">
                     <h3>Get In Touch</h3>
-                    
                     <div class="contact-method">
                         <span class="contact-method-icon">✉️</span>
                         <div>
@@ -768,10 +608,9 @@
                             <p>Available Nationwide</p>
                         </div>
                     </div>
-
-                    <div style="margin-top: 40px; padding: 25px; background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 240, 255, 0.6) 100%); border-radius: 10px; border: 2px solid #ffccbb;">
-                        <h4 style="color: #ff8866; margin-bottom: 15px;">Partnership Opportunities</h4>
-                        <p style="color: #666; line-height: 1.7;">Looking to collaborate on content, cross-promotion, or strategic partnerships across our network? Reach out to discuss how we can work together.</p>
+                    <div class="partnership-box">
+                        <h4>Partnership Opportunities</h4>
+                        <p>Looking to collaborate on content, cross-promotion, or strategic partnerships across our network? Reach out to discuss how we can work together.</p>
                     </div>
                 </div>
                 <div class="contact-form">
@@ -820,41 +659,24 @@
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
-
-        // Add scroll animation to cards
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-        document.querySelectorAll('.newsletter-card, .social-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
-        });
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
